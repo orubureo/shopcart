@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shopcart - Homepage</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/image/Shopcart-favicon.jpg" type="jpg">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Rethink+Sans:ital,wght@0,400..800;1,400..800&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+</head>
+
+<body>
+    <header>
+        <div class="header1">
+            <p>+001234567890</p>
+            <p>Get 50% Off on Selected Items | Shop Now</p>
+
+            <div style="display: flex;align-items: center;gap: 10px;">
+                <div class="dropdown">
+                    <button class="dropdown-btn" style="color: white; font-size: small;">
+                        Eng
+                        <i class="dropdown-icon" data-lucide="chevron-down"></i>
+                    </button>
+
+                    <div class="dropdown-menu">
+                        <a href="#">Bangla</a>
+                        <a href="#">Arabic</a>
+                        <a href="#">Urdu</a>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <button class="dropdown-btn" style="color: white; font-size: small;">
+                        Location
+                        <i class="dropdown-icon" data-lucide="chevron-down"></i>
+                    </button>
+
+                    <div class="dropdown-menu">
+                        <a href="#">Dhaka</a>
+                        <a href="#">USA</a>
+                        <a href="#">India</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header2">
+            <img src="/image/Shopcart-logo.jpg" alt="" style="width: 15%;">
+
+            <div style="display: flex; gap: 15px; font-size: 15px; align-items: center;">
+                <div class="dropdown">
+                    <button class="dropdown-btn">
+                        Category
+                        <i class="dropdown-icon" data-lucide="chevron-down"></i>
+                    </button>
+
+                    <div class="dropdown-menu">
+                        <a href="#"><i data-lucide="smartphone"></i> Electronics</a>
+                        <a href="#"><i data-lucide="shirt"></i> Clothing</a>
+                        <a href="#"><i data-lucide="shopping-bag"></i> Accessories</a>
+                    </div>
+                </div>
+                <a href="#" style="text-decoration: none; color: black">Deals</a>
+                <a href="#" style="text-decoration: none; color: black">What's New</a>
+                <a href="#" style="text-decoration: none; color: black">Delivery</a>
+            </div>
+
+            <form style="display: flex;align-items: center;">
+                <input type="search" name="" id=""
+                    style="padding: 10px;border: 1px solid rgb(124, 120, 120); border-radius: 20px;"
+                    placeholder="Search Product">
+
+                <button type="submit"><i data-lucide="search"></i></button>
+            </form>
+
+            <div style="display: flex; align-items: center;">
+                <i data-lucide="user" style="color: black;"></i>
+                <a href="#" style="text-decoration: none; color: black">Account</a>
+            </div>
+
+            <div style="display: flex; align-items: center;">
+                <i data-lucide="shopping-cart" style="color: black;"></i>
+                <a href="#" style="text-decoration: none; color: black;">Cart</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="hero-section">
+        <div style="color:rgb(0 61 41);font-family: rethink sans;font-size: 30px; font-weight: 800;">
+            <h1>Shopping And <br> Department Store.</h1>
+        </div>
+
+        <p style="line-height: 30px; font-size: x-large;">Shopping is a bit of a relaxing hobby for me, which <br> is
+            sometimes troubling
+            for the bank balance.</p>
+
+        <button class="btn">Learn More</button>
+    </div>
+
+    <div style="padding: 30px;">
+        <h1>Shop Our Top Categories</h1>
+
+        <div class="category">
+            <div class="card">
+                <img src="/image/Furniture-min.png" alt="">
+            </div>
+
+            <div class="card">
+                <img src="/image/hand bag-min.png" alt="">
+            </div>
+
+            <div class="card">
+                <img src="/image/books-min.png" alt="">
+            </div>
+
+            <div class="card">
+                <img src="/image/tech-min.png" alt="">
+            </div>
+
+            <div class="card">
+                <img src="/image/sneakers-min.png" alt="">
+            </div>
+
+            <div class="card">
+                <img src="/image/travel-min.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="/js/index.js"></script>
+    <script>lucide.createIcons();</script>
+
+</body>
+
+</html>

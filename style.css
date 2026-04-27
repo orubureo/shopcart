@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Inter, sans-serif;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.header1 {
+    background-color: rgb(0 61 41);
+    color: white;
+    padding-left: 50px;
+    padding-right: 50px;
+    display: flex;
+    justify-content: space-between;
+    font-size: small;
+}
+
+.header2 {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: space-between;
+    padding: 15px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.hero-section {
+    background-color: rgb(160 209 228);
+    padding: 30px;
+    color: black;
+    background-image: url("/image/bg-stage.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 500px;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.btn {
+    background-color: rgb(0 61 41);
+    color: white;
+    padding: 15px;
+    border-radius: 30px;
+    font-weight: bold;
+}
+
+
+/* ============
+  Dropdown Menu
+===============*/
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+/* Menu */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    min-width: 160px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.25s ease;
+}
+
+/* Show state */
+.dropdown.active .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Links */
+.dropdown-menu a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+}
+
+.dropdown-menu a:hover {
+    background: #f3f4f6;
+}
+
+/* Icon size */
+.dropdown-menu i {
+    width: 18px;
+    height: 18px;
+}
+
+.dropdown-icon {
+    transition: transform 0.25s ease;
+}
+
+/* When menu is open */
+.dropdown-btn.active .dropdown-icon {
+    transform: rotate(180deg);
+}
+
+.category {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+}
+
+.card {
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+/* image itself */
+.card img {
+    width: 100%;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+/* hover only affects image */
+.card:hover img {
+    transform: scale(1.2);
+}
+
+@media (max-width: 600px) {
+    .header2 {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .hero-section {
+        text-align: center;
+    }
+
+    .category {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
