@@ -39,7 +39,7 @@ body {
     background-color: rgb(160 209 228);
     padding: 30px;
     color: black;
-    background-image: url("/image/bg-stage.png");
+    background-image: url("image/bg-stage.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
