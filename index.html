@@ -7,7 +7,8 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Shopcart - Homepage</title>
+    <!-- Title -->
+    <title>Shopcart - Ecommerce Landing page</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="image/Shopcart-favicon.jpg" type="jpg">
@@ -25,35 +26,43 @@
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
+    <!-- Tailwind CSS & DaisyUI Comp -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
 </head>
 
 <body>
     <header>
-        <div class="header1">
-            <p>+001234567890</p>
-            <p>Get 50% Off on Selected Items | Shop Now</p>
+        <div class="header flex items-center">
+            <div class="flex items-center gap-2 ">
+                <i data-lucide="phone" class="w-4"></i>
+                <p>+001234567890</p>
+            </div>
 
-            <div style="display: flex;align-items: center;gap: 10px;">
-                <div class="dropdown">
-                    <button class="dropdown-btn" style="color: white; font-size: small;">
+            <p class="ms-hidden">Get 50% Off on Selected Items | Shop Now</p>
+
+            <div class="flex align-center gap-10">
+                <div class="cus-dropdown">
+                    <button class="cus-dropdown-btn" style="color: white; font-size: small;">
                         Eng
-                        <i class="dropdown-icon" data-lucide="chevron-down"></i>
+                        <i class="cus-dropdown-icon" data-lucide="chevron-down"></i>
                     </button>
 
-                    <div class="dropdown-menu">
+                    <div class="cus-dropdown-menu">
                         <a href="#">Bangla</a>
                         <a href="#">Arabic</a>
                         <a href="#">Urdu</a>
                     </div>
                 </div>
 
-                <div class="dropdown">
-                    <button class="dropdown-btn" style="color: white; font-size: small;">
+                <div class="cus-dropdown">
+                    <button class="cus-dropdown-btn" style="color: white; font-size: small;">
                         Location
-                        <i class="dropdown-icon" data-lucide="chevron-down"></i>
+                        <i class="cus-dropdown-icon" data-lucide="chevron-down"></i>
                     </button>
 
-                    <div class="dropdown-menu">
+                    <div class="cus-dropdown-menu">
                         <a href="#">Dhaka</a>
                         <a href="#">USA</a>
                         <a href="#">India</a>
@@ -62,88 +71,479 @@
             </div>
         </div>
 
-        <div class="header2">
-            <img src="image/Shopcart-logo.jpg" alt="" style="width: 15%;">
+        <div class="cus-navbar">
+            <img src="image/Shopcart-logo.jpg" alt="" class="logo">
 
-            <div style="display: flex; gap: 15px; font-size: 15px; align-items: center;">
-                <div class="dropdown">
-                    <button class="dropdown-btn">
-                        Category
-                        <i class="dropdown-icon" data-lucide="chevron-down"></i>
-                    </button>
+            <div class="hidden md:flex items-center justify-between gap-10 w-full">
 
-                    <div class="dropdown-menu">
-                        <a href="#"><i data-lucide="smartphone"></i> Electronics</a>
-                        <a href="#"><i data-lucide="shirt"></i> Clothing</a>
-                        <a href="#"><i data-lucide="shopping-bag"></i> Accessories</a>
+                <div class="flex items-center gap-10">
+                    <div class="cus-dropdown">
+                        <button class="cus-dropdown-btn">
+                            Category
+                            <i class="cus-dropdown-icon" data-lucide="chevron-down"></i>
+                        </button>
+
+                        <div class="cus-dropdown-menu">
+                            <a href="#"><i data-lucide="smartphone"></i> Electronics</a>
+                            <a href="#"><i data-lucide="shirt"></i> Clothing</a>
+                            <a href="#"><i data-lucide="shopping-bag"></i> Accessories</a>
+                        </div>
                     </div>
+                    <a href="#" class="text-black no-underline">Deals</a>
+                    <a href="#" class="text-black no-underline">What's New</a>
+                    <a href="#" class="text-black no-underline">Delivery</a>
                 </div>
-                <a href="#" style="text-decoration: none; color: black">Deals</a>
-                <a href="#" style="text-decoration: none; color: black">What's New</a>
-                <a href="#" style="text-decoration: none; color: black">Delivery</a>
+
+                <!-- <form class="flex align-center">
+                    <input type="search" name="" id="" class="p-1 border-1px solid rgb(124, 120, 120) rounded-lg"
+                        placeholder="Search Product">
+
+                    <button type="submit"><i data-lucide="search"></i></button>
+                </form> -->
+
+                <div class="join border-1 rounded-full">
+                    <input class="input input-ghost focus:outline-none join-item rounded-l-full"
+                        placeholder="Search Product" />
+                    <button class="btn btn-ghost join-item rounded-r-full"><i data-lucide="search"></i></button>
+                </div>
+
+                <div class="flex items-center">
+                    <i data-lucide="user" class=""></i>
+                    <a href="#" class="">Account</a>
+                </div>
+
+                <div class="flex items-center">
+                    <i data-lucide="shopping-cart" class=""></i>
+                    <a href="#" class="">Cart</a>
+                </div>
             </div>
 
-            <form style="display: flex;align-items: center;">
-                <input type="search" name="" id=""
-                    style="padding: 10px;border: 1px solid rgb(124, 120, 120); border-radius: 20px;"
-                    placeholder="Search Product">
-
-                <button type="submit"><i data-lucide="search"></i></button>
-            </form>
-
-            <div style="display: flex; align-items: center;">
-                <i data-lucide="user" style="color: black;"></i>
-                <a href="#" style="text-decoration: none; color: black">Account</a>
-            </div>
-
-            <div style="display: flex; align-items: center;">
-                <i data-lucide="shopping-cart" style="color: black;"></i>
-                <a href="#" style="text-decoration: none; color: black;">Cart</a>
-            </div>
         </div>
     </header>
 
-    <div class="hero-section">
-        <div style="color:rgb(0 61 41);font-family: rethink sans;font-size: 30px; font-weight: 800;">
-            <h1>Shopping And <br> Department Store.</h1>
-        </div>
+    <section class="hero-section">
 
-        <p style="line-height: 30px; font-size: x-large;">Shopping is a bit of a relaxing hobby for me, which <br> is
+        <h1 class="reveal">Shopping And <br> Department Store.</h1>
+
+        <p class="reveal">Shopping is a bit of a relaxing hobby for
+            me, which <br> is
             sometimes troubling
-            for the bank balance.</p>
+            for the bank balance.
+        </p>
 
-        <button class="btn">Learn More</button>
-    </div>
+        <div class="btn text-white bg-[#003d29] w-40 rounded-full text-center py-2 cursor-pointer reveal">
+            Learn More
+        </div>
+    </section>
 
-    <div style="padding: 30px;">
-        <h1>Shop Our Top Categories</h1>
+    <section class="categories">
+
+        <h1 class="reveal text-2xl md:text-3xl font-bold">Shop Our Top Categories</h1>
+
 
         <div class="category">
-            <div class="card">
+            <div class="card reveal">
                 <img src="image/Furniture-min.png" alt="">
             </div>
 
-            <div class="card">
+            <div class="card reveal">
                 <img src="image/hand-bag-min.png" alt="">
             </div>
 
-            <div class="card">
+            <div class="card reveal">
                 <img src="image/books-min.png" alt="">
             </div>
 
-            <div class="card">
+            <div class="card reveal">
                 <img src="image/tech-min.png" alt="">
             </div>
 
-            <div class="card">
+            <div class="card reveal">
                 <img src="image/sneakers-min.png" alt="">
             </div>
 
-            <div class="card">
+            <div class="card reveal">
                 <img src="image/travel-min.png" alt="">
             </div>
         </div>
-    </div>
+    </section>
+
+    <section class="carousel-sec">
+        <h1 class="reveal text-2xl md:text-3xl font-bold">Today's Best Deal For You!</h1>
+
+        <div class="carousel">
+
+            <div class="carousel-track reveal">
+
+                <div class="carousel-card">
+                    <img src="image/homepad-mini.png">
+
+                    <div class="carousel-card-detail">
+                        <div class="flex justify-between">
+                            <h3>HomePod mini</h3>
+                            <p>$239.00</p>
+                        </div>
+                        <p>Table with air purifier, stained veneer/black</p>
+                        <div class="text-[rgb(8,172,10)] flex">
+                            <i style="fill: rgb(8 172 10);" data-lucide="star"></i>
+                            <i style="fill: rgb(8 172 10);" data-lucide="star"></i>
+                            <i style="fill: rgb(8 172 10);" data-lucide="star"></i>
+                            <i style="fill: rgb(8 172 10);" data-lucide="star"></i>
+                            <i style="fill: rgb(8 172 10);" data-lucide="star"></i>
+                        </div>
+                        <div class="btn carousel-btn">Add to cart</div>
+                    </div>
+
+                </div>
+
+                <div class="carousel-card">
+                    <img src="image/instax-mini9-min.png">
+
+                    <div class="carousel-card-detail">
+                        <div class="flex justify-between">
+                            <h3>HomePod mini</h3>
+                            <p>$239.00</p>
+                        </div>
+                        <p>Table with air purifier, stained veneer/black</p>
+                        <div class="text-[rgb(8,172,10)] flex">
+                            <i style="fill: rgb(8 172 10);" data-lucide="star"></i>
+                            <i style="fill: rgb(8 172 10);" data-lucide="star"></i>
+                            <i style="fill: rgb(8 172 10);" data-lucide="star"></i>
+                            <i style="fill: rgb(8 172 10);" data-lucide="star"></i>
+                            <i style="fill: rgb(8 172 10);" data-lucide="star"></i>
+                        </div>
+                        <div class="btn carousel-btn">Add to cart</div>
+                    </div>
+                </div>
+
+                <div class="carousel-card">
+                    <img src="image/base-camp-duffelbag-min.png">
+
+                    <div class="carousel-card-detail">
+                        <div class="flex justify-between">
+                            <h3>HomePod mini</h3>
+                            <p>$239.00</p>
+                        </div>
+                        <p>Table with air purifier, stained veneer/black</p>
+                        <div class="text-[rgb(8,172,10)] flex">
+                            <i style="fill: rgb(8 172 10);" data-lucide="star"></i>
+                            <i style="fill: rgb(8 172 10);" data-lucide="star"></i>
+                            <i style="fill: rgb(8 172 10);" data-lucide="star"></i>
+                            <i style="fill: rgb(8 172 10);" data-lucide="star"></i>
+                            <i style="fill: rgb(8 172 10);" data-lucide="star"></i>
+                        </div>
+                        <div class="btn carousel-btn">Add to cart</div>
+                    </div>
+                </div>
+                <div class="carousel-card">
+                    <img src="image/Tote-Medium-min.png">
+
+                    <div class="carousel-card-detail">
+                        <div class="flex justify-between">
+                            <h3>HomePod mini</h3>
+                            <p>$239.00</p>
+                        </div>
+                        <p>Table with air purifier, stained veneer/black</p>
+                        <div class="text-[rgb(8,172,10)] flex">
+                            <i style="fill: rgb(8 172 10);" data-lucide="star"></i>
+                            <i style="fill: rgb(8 172 10);" data-lucide="star"></i>
+                            <i style="fill: rgb(8 172 10);" data-lucide="star"></i>
+                            <i style="fill: rgb(8 172 10);" data-lucide="star"></i>
+                            <i style="fill: rgb(8 172 10);" data-lucide="star"></i>
+                        </div>
+                        <div class="btn carousel-btn">Add to cart</div>
+                    </div>
+                </div>
+                <div class="carousel-card">
+                    <img src="image/headphone-min.png">
+
+                    <div class="carousel-card-detail">
+                        <div class="flex justify-between">
+                            <h3>HomePod mini</h3>
+                            <p>$239.00</p>
+                        </div>
+                        <p>Table with air purifier, stained veneer/black</p>
+                        <div class="text-[rgb(8,172,10)] flex">
+                            <i style="fill: rgb(8 172 10);" data-lucide="star"></i>
+                            <i style="fill: rgb(8 172 10);" data-lucide="star"></i>
+                            <i style="fill: rgb(8 172 10);" data-lucide="star"></i>
+                            <i style="fill: rgb(8 172 10);" data-lucide="star"></i>
+                            <i style="fill: rgb(8 172 10);" data-lucide="star"></i>
+                        </div>
+                        <div class="btn carousel-btn">Add to cart</div>
+                    </div>
+                </div>
+                <div class="carousel-card">
+                    <img src="image/tomford-watch-min.png">
+
+                    <div class="carousel-card-detail">
+                        <div class="flex justify-between">
+                            <h3>HomePod mini</h3>
+                            <p>$239.00</p>
+                        </div>
+                        <p>Table with air purifier, stained veneer/black</p>
+                        <div class="text-[rgb(8,172,10)] flex">
+                            <i style="fill: rgb(8 172 10);" data-lucide="star"></i>
+                            <i style="fill: rgb(8 172 10);" data-lucide="star"></i>
+                            <i style="fill: rgb(8 172 10);" data-lucide="star"></i>
+                            <i style="fill: rgb(8 172 10);" data-lucide="star"></i>
+                            <i style="fill: rgb(8 172 10);" data-lucide="star"></i>
+                        </div>
+                        <div class="btn carousel-btn">Add to cart</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="choose-brand">
+        <h1 class="reveal text-2xl md:text-3xl font-bold">Choose By Brand</h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+
+            <div class="brand flex items-center gap-3 p-4 bg-gray-100 rounded-lg">
+                <img src="image/staples-brand.png" alt="">
+                <div>
+                    <p class="text-lg font-bold">Staples</p>
+                    <p class="text-sm">Delivery within 24 hours</p>
+                </div>
+            </div>
+
+            <div class="brand flex items-center gap-3 p-4 bg-gray-100 rounded-lg">
+                <img src="image/sprous-brand.png" alt="">
+                <div>
+                    <p class="text-lg font-bold">Sprouts</p>
+                    <p class="text-sm">Delivery within 24 hours</p>
+                </div>
+            </div>
+
+            <div class="brand flex items-center gap-3 p-4 bg-gray-100 rounded-lg">
+                <img src="image/grocery-brand.png" alt="">
+                <div>
+                    <p class="text-lg font-bold">Grocery outlet</p>
+                    <p class="text-sm">Delivery within 24 hours</p>
+                </div>
+            </div>
+
+            <div class="brand flex items-center gap-3 p-4 bg-gray-100 rounded-lg">
+                <img src="image/millie-stones-brand.png" alt="">
+                <div>
+                    <p class="text-lg font-bold">Millie Stones</p>
+                    <p class="text-sm">Delivery within 24 hours</p>
+                </div>
+            </div>
+
+            <div class="brand flex items-center gap-3 p-4 bg-gray-100 rounded-lg">
+                <img src="image/sports-brand.png" alt="">
+                <div>
+                    <p class="text-lg font-bold">Sports Basement</p>
+                    <p class="text-sm">Delivery within 24 hours</p>
+                </div>
+            </div>
+
+            <div class="brand flex items-center gap-3 p-4 bg-gray-100 rounded-lg">
+                <img src="image/containerbrand.png" alt="">
+                <div>
+                    <p class="text-lg font-bold">Container Store</p>
+                    <p class="text-sm">Delivery within 24 hours</p>
+                </div>
+            </div>
+
+            <div class="brand flex items-center gap-3 p-4 bg-gray-100 rounded-lg">
+                <img src="image/target-brand.png" alt="">
+                <div>
+                    <p class="text-lg font-bold">Target</p>
+                    <p class="text-sm">Delivery within 24 hours</p>
+                </div>
+            </div>
+
+            <div class="brand flex items-center gap-3 p-4 bg-gray-100 rounded-lg">
+                <img src="image/bevmo-brand.png" alt="">
+                <div>
+                    <p class="text-lg font-bold">Bevmo!</p>
+                    <p class="text-sm">Delivery within 24 hours</p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="flex flex-col gap-10">
+
+        <p class="text-xl md:text-3xl font-bold">Get Up To 70% off</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+
+            <div class="bg-[#f2e4d9] rounded-lg">
+                <div class="p-8 flex flex-col gap-2">
+                    <p class="font-bold text-2xl">Save</p>
+                    <p class="text-4xl md:text-5xl font-bold text-[#cb9917]">$100</p>
+                    <p>Explore Our Furniture & <br>Home Furnishing Range</p>
+                </div>
+                <img src="image/sofa-min.png" alt="" class="w-full md:w-50% rounded-b-lg">
+            </div>
+
+            <div class="bg-[#f9dcdc] rounded-lg">
+                <div class="p-8 flex flex-col gap-2">
+                    <p class="font-bold text-2xl">Save</p>
+                    <p class="text-4xl md:text-5xl font-bold text-[#961f1f]">$29</p>
+                    <p>Explore Our Furniture & <br>Home Furnishing Range</p>
+                </div>
+                <img src="image/book-min.png" alt="" class="w-full md:w-50% rounded-b-lg">
+            </div>
+
+            <div class="bg-[#f2e4d9] rounded-lg">
+                <div class="p-8 flex flex-col gap-2">
+                    <p class="font-bold text-2xl">Save</p>
+                    <p class="text-4xl md:text-5xl font-bold text-[#94623c]">$67</p>
+                    <p>Explore Our Furniture & <br>Home Furnishing Range</p>
+                </div>
+                <img src="image/shirt-min.png" alt="" class="w-full md:w-50% rounded-b-lg">
+            </div>
+
+            <div class="bg-[#d2f7ec] rounded-lg">
+                <div class="p-8 flex flex-col gap-2">
+                    <p class="font-bold text-2xl">Save</p>
+                    <p class="text-4xl md:text-5xl font-bold text-[#003d29]">$59</p>
+                    <p>Explore Our Furniture & <br>Home Furnishing Range</p>
+                </div>
+                <img src="image/bug & book-min.png" alt="" class="w-full md:w-50% rounded-b-lg">
+            </div>
+
+        </div>
+    </section>
+
+    <section class="carousel-sec">
+        <h1 class="reveal text-2xl md:text-3xl font-bold">Weekly Popular Products</h1>
+
+        <div class="carousel">
+
+            <div class="carousel-track reveal">
+
+                <div class="carousel-card">
+                    <img src="image/homepad-mini.png">
+
+                    <div class="carousel-card-detail">
+                        <div class="flex justify-between">
+                            <h3>HomePod mini</h3>
+                            <p>$239.00</p>
+                        </div>
+                        <p>Table with air purifier, stained veneer/black</p>
+                        <div class="text-[rgb(8,172,10)] flex">
+                            <i style="fill: rgb(8 172 10);" data-lucide="star"></i>
+                            <i style="fill: rgb(8 172 10);" data-lucide="star"></i>
+                            <i style="fill: rgb(8 172 10);" data-lucide="star"></i>
+                            <i style="fill: rgb(8 172 10);" data-lucide="star"></i>
+                            <i style="fill: rgb(8 172 10);" data-lucide="star"></i>
+                        </div>
+                        <div class="btn carousel-btn">Add to cart</div>
+                    </div>
+
+                </div>
+
+                <div class="carousel-card">
+                    <img src="image/instax-mini9-min.png">
+
+                    <div class="carousel-card-detail">
+                        <div class="flex justify-between">
+                            <h3>HomePod mini</h3>
+                            <p>$239.00</p>
+                        </div>
+                        <p>Table with air purifier, stained veneer/black</p>
+                        <div class="text-[rgb(8,172,10)] flex">
+                            <i style="fill: rgb(8 172 10);" data-lucide="star"></i>
+                            <i style="fill: rgb(8 172 10);" data-lucide="star"></i>
+                            <i style="fill: rgb(8 172 10);" data-lucide="star"></i>
+                            <i style="fill: rgb(8 172 10);" data-lucide="star"></i>
+                            <i style="fill: rgb(8 172 10);" data-lucide="star"></i>
+                        </div>
+                        <div class="btn carousel-btn">Add to cart</div>
+                    </div>
+                </div>
+
+                <div class="carousel-card">
+                    <img src="image/base-camp-duffelbag-min.png">
+
+                    <div class="carousel-card-detail">
+                        <div class="flex justify-between">
+                            <h3>HomePod mini</h3>
+                            <p>$239.00</p>
+                        </div>
+                        <p>Table with air purifier, stained veneer/black</p>
+                        <div class="text-[rgb(8,172,10)] flex">
+                            <i style="fill: rgb(8 172 10);" data-lucide="star"></i>
+                            <i style="fill: rgb(8 172 10);" data-lucide="star"></i>
+                            <i style="fill: rgb(8 172 10);" data-lucide="star"></i>
+                            <i style="fill: rgb(8 172 10);" data-lucide="star"></i>
+                            <i style="fill: rgb(8 172 10);" data-lucide="star"></i>
+                        </div>
+                        <div class="btn carousel-btn">Add to cart</div>
+                    </div>
+                </div>
+                <div class="carousel-card">
+                    <img src="image/Tote-Medium-min.png">
+
+                    <div class="carousel-card-detail">
+                        <div class="flex justify-between">
+                            <h3>HomePod mini</h3>
+                            <p>$239.00</p>
+                        </div>
+                        <p>Table with air purifier, stained veneer/black</p>
+                        <div class="text-[rgb(8,172,10)] flex">
+                            <i style="fill: rgb(8 172 10);" data-lucide="star"></i>
+                            <i style="fill: rgb(8 172 10);" data-lucide="star"></i>
+                            <i style="fill: rgb(8 172 10);" data-lucide="star"></i>
+                            <i style="fill: rgb(8 172 10);" data-lucide="star"></i>
+                            <i style="fill: rgb(8 172 10);" data-lucide="star"></i>
+                        </div>
+                        <div class="btn carousel-btn">Add to cart</div>
+                    </div>
+                </div>
+                <div class="carousel-card">
+                    <img src="image/headphone-min.png">
+
+                    <div class="carousel-card-detail">
+                        <div class="flex justify-between">
+                            <h3>HomePod mini</h3>
+                            <p>$239.00</p>
+                        </div>
+                        <p>Table with air purifier, stained veneer/black</p>
+                        <div class="text-[rgb(8,172,10)] flex">
+                            <i style="fill: rgb(8 172 10);" data-lucide="star"></i>
+                            <i style="fill: rgb(8 172 10);" data-lucide="star"></i>
+                            <i style="fill: rgb(8 172 10);" data-lucide="star"></i>
+                            <i style="fill: rgb(8 172 10);" data-lucide="star"></i>
+                            <i style="fill: rgb(8 172 10);" data-lucide="star"></i>
+                        </div>
+                        <div class="btn carousel-btn">Add to cart</div>
+                    </div>
+                </div>
+                <div class="carousel-card">
+                    <img src="image/tomford-watch-min.png">
+
+                    <div class="carousel-card-detail">
+                        <div class="flex justify-between">
+                            <h3>HomePod mini</h3>
+                            <p>$239.00</p>
+                        </div>
+                        <p>Table with air purifier, stained veneer/black</p>
+                        <div class="text-[rgb(8,172,10)] flex">
+                            <i style="fill: rgb(8 172 10);" data-lucide="star"></i>
+                            <i style="fill: rgb(8 172 10);" data-lucide="star"></i>
+                            <i style="fill: rgb(8 172 10);" data-lucide="star"></i>
+                            <i style="fill: rgb(8 172 10);" data-lucide="star"></i>
+                            <i style="fill: rgb(8 172 10);" data-lucide="star"></i>
+                        </div>
+                        <div class="btn carousel-btn">Add to cart</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
 
     <script type="module" src="/js/index.js"></script>
     <script>lucide.createIcons();</script>
