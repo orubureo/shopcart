@@ -1,8 +1,8 @@
-const dropdowns = document.querySelectorAll(".dropdown");
+const dropdowns = document.querySelectorAll(".cus-dropdown");
 
 dropdowns.forEach(dropdown => {
-  const btn = dropdown.querySelector(".dropdown-btn");
-  const menu = dropdown.querySelector(".dropdown-menu");
+  const btn = dropdown.querySelector(".cus-dropdown-btn");
+  const menu = dropdown.querySelector(".cus-dropdown-menu");
 
   btn.addEventListener("click", (e) => {
     e.stopPropagation();
@@ -11,7 +11,7 @@ dropdowns.forEach(dropdown => {
     dropdowns.forEach(d => {
       if (d !== dropdown) {
         d.classList.remove("active");
-        d.querySelector(".dropdown-btn").classList.remove("active");
+        d.querySelector(".cus-dropdown-btn").classList.remove("active");
       }
     });
 
@@ -25,7 +25,7 @@ dropdowns.forEach(dropdown => {
 document.addEventListener("click", () => {
   dropdowns.forEach(dropdown => {
     dropdown.classList.remove("active");
-    dropdown.querySelector(".dropdown-btn").classList.remove("active");
+    dropdown.querySelector(".cus-dropdown-btn").classList.remove("active");
   });
 });
 
