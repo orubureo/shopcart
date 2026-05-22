@@ -424,34 +424,23 @@ window.addEventListener('pageshow', () => {
 });
 
 /**
- * Mobile search toggle.
- * Shows/hides the search bar below the navbar on mobile
- * when the search icon is clicked.
+ * Mobile search dropdown.
+ * Shows category dropdown when input is focused.
+ * Hides when clicking outside.
  */
-const mobileSearchToggle = document.getElementById('mobile-search-toggle');
-const mobileSearchBar = document.getElementById('mobile-search-bar');
 const mobileSearchInput = document.getElementById('mobile-search-input');
 const mobileSearchDropdown = document.getElementById('mobile-search-dropdown');
 const mobileSearchWrapper = document.getElementById('mobile-search-wrapper');
 
-if (mobileSearchToggle && mobileSearchBar) {
-  mobileSearchToggle.addEventListener('click', () => {
-    mobileSearchBar.classList.toggle('hidden');
-    if (!mobileSearchBar.classList.contains('hidden')) {
-      mobileSearchInput.focus();
-    }
-  });
-}
-
 if (mobileSearchInput && mobileSearchDropdown) {
+
   mobileSearchInput.addEventListener('focus', () => {
     mobileSearchDropdown.classList.remove('hidden');
     lucide.createIcons();
   });
 
   document.addEventListener('click', (e) => {
-    if (mobileSearchWrapper && !mobileSearchWrapper.contains(e.target) &&
-      e.target !== mobileSearchToggle) {
+    if (mobileSearchWrapper && !mobileSearchWrapper.contains(e.target)) {
       mobileSearchDropdown.classList.add('hidden');
     }
   });

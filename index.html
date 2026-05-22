@@ -86,14 +86,8 @@
                 </a>
 
                 <!-- Mobile: search icon + hamburger -->
+                <!-- Mobile: only hamburger, no search icon -->
                 <div class="flex items-center gap-2 md:hidden">
-
-                    <!-- Mobile search toggle button -->
-                    <button id="mobile-search-toggle" class="btn btn-ghost btn-circle">
-                        <i data-lucide="search" class="w-5 h-5"></i>
-                    </button>
-
-                    <!-- Hamburger -->
                     <div class="dropdown dropdown-end">
                         <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
@@ -102,32 +96,31 @@
                                     d="M4 6h16M4 12h16M4 18h7" />
                             </svg>
                         </div>
-
                         <ul tabindex="-1"
                             class="menu menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-56 p-2 shadow right-0">
                             <li>
                                 <details>
                                     <summary class="font-medium">Category</summary>
                                     <ul class="bg-gray-50 rounded-lg mt-1 p-1">
-                                        <li><a href="" class="flex items-center gap-2">
-                                                <i data-lucide="smartphone" class="w-4 h-4"></i> Electronics</a></li>
-                                        <li><a href="" class="flex items-center gap-2">
-                                                <i data-lucide="shirt" class="w-4 h-4"></i> Clothing</a></li>
-                                        <li><a href="" class="flex items-center gap-2">
-                                                <i data-lucide="shopping-bag" class="w-4 h-4"></i> Accessories</a></li>
+                                        <li><a href="#" class="flex items-center gap-2"><i data-lucide="smartphone"
+                                                    class="w-4 h-4"></i> Electronics</a></li>
+                                        <li><a href="#" class="flex items-center gap-2"><i data-lucide="shirt"
+                                                    class="w-4 h-4"></i> Clothing</a></li>
+                                        <li><a href="#" class="flex items-center gap-2"><i data-lucide="shopping-bag"
+                                                    class="w-4 h-4"></i> Accessories</a></li>
                                     </ul>
                                 </details>
                             </li>
-                            <li><a href="">Deals</a></li>
-                            <li><a href="">What's New</a></li>
-                            <li><a href="">Delivery</a></li>
+                            <li><a href="headphone.html">Deals</a></li>
+                            <li><a href="#">What's New</a></li>
+                            <li><a href="#">Delivery</a></li>
                             <li class="border-t border-gray-100 mt-1 pt-1">
-                                <a href="" class="flex items-center gap-2">
-                                    <i data-lucide="user" class="w-4 h-4"></i> Account</a>
+                                <a href="#" class="flex items-center gap-2"><i data-lucide="user" class="w-4 h-4"></i>
+                                    Account</a>
                             </li>
                             <li>
-                                <a href="" class="flex items-center gap-2">
-                                    <i data-lucide="shopping-cart" class="w-4 h-4"></i> Cart</a>
+                                <a href="#" class="flex items-center gap-2"><i data-lucide="shopping-cart"
+                                        class="w-4 h-4"></i> Cart</a>
                             </li>
                         </ul>
                     </div>
@@ -236,7 +229,7 @@
             </div>
 
             <!-- Mobile Search Bar (hidden by default, toggled by search icon) -->
-            <div id="mobile-search-bar" class="hidden w-full md:hidden pb-2">
+            <div class="w-full md:hidden pb-2">
                 <div class="relative" id="mobile-search-wrapper">
                     <div class="join border border-gray-200 rounded-full w-full">
                         <input id="mobile-search-input"
