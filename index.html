@@ -33,9 +33,18 @@
 </head>
 
 <body>
+    <!-- Page Transition Overlay -->
+    <div id="page-transition"
+        class="fixed inset-0 bg-white z-[9999] flex items-center justify-center pointer-events-none opacity-0 transition-opacity duration-300">
+        <div class="flex flex-col items-center gap-3">
+            <img src="image/Shopcart-logo.jpg" class="w-24 animate-pulse" alt="Loading">
+            <span class="loading loading-dots loading-md text-green-700"></span>
+        </div>
+    </div>
+
     <header>
         <div class="header flex items-center">
-            <div class="flex items-center gap-2 ">
+            <div class="flex items-center gap-2">
                 <i data-lucide="phone" class="w-4"></i>
                 <p>+001234567890</p>
             </div>
@@ -45,10 +54,8 @@
             <div class="flex align-center gap-10">
                 <div class="cus-dropdown">
                     <button class="cus-dropdown-btn" style="color: white; font-size: small;">
-                        Eng
-                        <i class="cus-dropdown-icon" data-lucide="chevron-down"></i>
+                        Eng <i class="cus-dropdown-icon" data-lucide="chevron-down"></i>
                     </button>
-
                     <div class="cus-dropdown-menu">
                         <a href="#">Bangla</a>
                         <a href="#">Arabic</a>
@@ -58,10 +65,8 @@
 
                 <div class="cus-dropdown">
                     <button class="cus-dropdown-btn" style="color: white; font-size: small;">
-                        Location
-                        <i class="cus-dropdown-icon" data-lucide="chevron-down"></i>
+                        Location <i class="cus-dropdown-icon" data-lucide="chevron-down"></i>
                     </button>
-
                     <div class="cus-dropdown-menu">
                         <a href="#">Dhaka</a>
                         <a href="#">USA</a>
@@ -71,50 +76,215 @@
             </div>
         </div>
 
-        <div class="cus-navbar">
-            <img src="image/Shopcart-logo.jpg" alt="" class="logo">
+        <!-- Main Navbar -->
+        <div class="cus-navbar flex-col gap-2 md:flex-row">
 
-            <div class="hidden md:flex items-center justify-between gap-10 w-full">
+            <!-- Row 1: Logo + Icons (mobile) / Logo + Nav + Search + Icons (desktop) -->
+            <div class="flex items-center justify-between w-full">
+                <img src="image/Shopcart-logo.jpg" alt="" class="logo">
 
-                <div class="flex items-center gap-10">
-                    <div class="cus-dropdown">
-                        <button class="cus-dropdown-btn">
-                            Category
-                            <i class="cus-dropdown-icon" data-lucide="chevron-down"></i>
-                        </button>
+                <!-- Mobile: search icon + hamburger -->
+                <div class="flex items-center gap-2 md:hidden">
 
-                        <div class="cus-dropdown-menu">
-                            <a href="#"><i data-lucide="smartphone"></i> Electronics</a>
-                            <a href="#"><i data-lucide="shirt"></i> Clothing</a>
-                            <a href="#"><i data-lucide="shopping-bag"></i> Accessories</a>
+                    <!-- Mobile search toggle button -->
+                    <button id="mobile-search-toggle" class="btn btn-ghost btn-circle">
+                        <i data-lucide="search" class="w-5 h-5"></i>
+                    </button>
+
+                    <!-- Hamburger -->
+                    <div class="dropdown dropdown-end">
+                        <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h16M4 18h7" />
+                            </svg>
+                        </div>
+
+                        <ul tabindex="-1"
+                            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-56 p-2 shadow right-0">
+                            <li>
+                                <details>
+                                    <summary class="font-medium">Category</summary>
+                                    <ul class="bg-gray-50 rounded-lg mt-1 p-1">
+                                        <li><a href="#" class="flex items-center gap-2">
+                                                <i data-lucide="smartphone" class="w-4 h-4"></i> Electronics</a></li>
+                                        <li><a href="#" class="flex items-center gap-2">
+                                                <i data-lucide="shirt" class="w-4 h-4"></i> Clothing</a></li>
+                                        <li><a href="#" class="flex items-center gap-2">
+                                                <i data-lucide="shopping-bag" class="w-4 h-4"></i> Accessories</a></li>
+                                    </ul>
+                                </details>
+                            </li>
+                            <li><a href="headphone.html">Deals</a></li>
+                            <li><a href="#">What's New</a></li>
+                            <li><a href="#">Delivery</a></li>
+                            <li class="border-t border-gray-100 mt-1 pt-1">
+                                <a href="#" class="flex items-center gap-2">
+                                    <i data-lucide="user" class="w-4 h-4"></i> Account</a>
+                            </li>
+                            <li>
+                                <a href="#" class="flex items-center gap-2">
+                                    <i data-lucide="shopping-cart" class="w-4 h-4"></i> Cart</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Desktop nav -->
+                <div class="hidden md:flex items-center justify-between gap-10 w-full ms-10">
+                    <div class="flex items-center gap-10">
+                        <div class="cus-dropdown">
+                            <button class="cus-dropdown-btn">
+                                Category <i class="cus-dropdown-icon" data-lucide="chevron-down"></i>
+                            </button>
+                            <div class="cus-dropdown-menu">
+                                <a href="#"><i data-lucide="smartphone"></i> Electronics</a>
+                                <a href="#"><i data-lucide="shirt"></i> Clothing</a>
+                                <a href="#"><i data-lucide="shopping-bag"></i> Accessories</a>
+                            </div>
+                        </div>
+                        <a href="headphone.html" class="text-black no-underline">Deals</a>
+                        <a href="#" class="text-black no-underline">What's New</a>
+                        <a href="#" class="text-black no-underline">Delivery</a>
+                    </div>
+
+                    <!-- Desktop Search -->
+                    <div class="relative" id="search-wrapper">
+                        <div class="join border-1 rounded-full">
+                            <input id="search-input"
+                                class="input input-ghost focus:outline-none join-item rounded-l-full"
+                                placeholder="Search Product" autocomplete="off" />
+                            <button class="btn btn-ghost join-item rounded-r-full">
+                                <i data-lucide="search"></i>
+                            </button>
+                        </div>
+
+                        <!-- Search Dropdown -->
+                        <div id="search-dropdown"
+                            class="hidden absolute top-12 left-0 w-[420px] bg-white border border-gray-200 rounded-2xl shadow-lg p-5 z-50">
+                            <p class="font-semibold text-sm mb-4">Popular Categories</p>
+                            <div class="grid grid-cols-2 gap-3">
+                                <a href="#"
+                                    class="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-50 border border-gray-100">
+                                    <img src="image/furniture.png" class="w-10 h-10 object-contain" alt="Furniture">
+                                    <div>
+                                        <p class="font-semibold text-sm">Furniture</p>
+                                        <p class="text-xs text-gray-400">240 Item Available</p>
+                                    </div>
+                                </a>
+                                <a href="headphone.html"
+                                    class="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-50 border border-gray-100">
+                                    <img src="image/airpodmax-blue.png" class="w-10 h-10 object-contain"
+                                        alt="Headphone">
+                                    <div>
+                                        <p class="font-semibold text-sm">Headphone</p>
+                                        <p class="text-xs text-gray-400">240 Item Available</p>
+                                    </div>
+                                </a>
+                                <a href="#"
+                                    class="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-50 border border-gray-100">
+                                    <img src="image/victoria_coral-multicolor_1.png" class="w-10 h-10 object-contain"
+                                        alt="Shoe">
+                                    <div>
+                                        <p class="font-semibold text-sm">Shoe</p>
+                                        <p class="text-xs text-gray-400">240 Item Available</p>
+                                    </div>
+                                </a>
+                                <a href="#"
+                                    class="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-50 border border-gray-100">
+                                    <img src="image/DALIX-Signature-Travel-or-Gym-Duffle-Bag-in-Pink.png"
+                                        class="w-10 h-10 object-contain" alt="Bag">
+                                    <div>
+                                        <p class="font-semibold text-sm">Bag</p>
+                                        <p class="text-xs text-gray-400">240 Item Available</p>
+                                    </div>
+                                </a>
+                                <a href="#"
+                                    class="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-50 border border-gray-100">
+                                    <img src="image/macbook-13-min.png" class="w-10 h-10 object-contain" alt="Laptop">
+                                    <div>
+                                        <p class="font-semibold text-sm">Laptop</p>
+                                        <p class="text-xs text-gray-400">240 Item Available</p>
+                                    </div>
+                                </a>
+                                <a href="#"
+                                    class="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-50 border border-gray-100">
+                                    <img src="image/Carrie+Soto.webp" class="w-10 h-10 object-contain" alt="Book">
+                                    <div>
+                                        <p class="font-semibold text-sm">Book</p>
+                                        <p class="text-xs text-gray-400">240 Item Available</p>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <a href="#" class="text-black no-underline">Deals</a>
-                    <a href="#" class="text-black no-underline">What's New</a>
-                    <a href="#" class="text-black no-underline">Delivery</a>
+
+                    <div class="flex items-center gap-5">
+                        <div class="flex items-center gap-1">
+                            <i data-lucide="user"></i>
+                            <a href="#">Account</a>
+                        </div>
+                        <div class="flex items-center gap-1">
+                            <i data-lucide="shopping-cart"></i>
+                            <a href="#">Cart</a>
+                        </div>
+                    </div>
                 </div>
+            </div>
 
-                <!-- <form class="flex align-center">
-                    <input type="search" name="" id="" class="p-1 border-1px solid rgb(124, 120, 120) rounded-lg"
-                        placeholder="Search Product">
+            <!-- Mobile Search Bar (hidden by default, toggled by search icon) -->
+            <div id="mobile-search-bar" class="hidden w-full md:hidden pb-2">
+                <div class="relative" id="mobile-search-wrapper">
+                    <div class="join border border-gray-200 rounded-full w-full">
+                        <input id="mobile-search-input"
+                            class="input input-ghost focus:outline-none join-item rounded-l-full w-full"
+                            placeholder="Search Product" autocomplete="off" />
+                        <button class="btn btn-ghost join-item rounded-r-full">
+                            <i data-lucide="search"></i>
+                        </button>
+                    </div>
 
-                    <button type="submit"><i data-lucide="search"></i></button>
-                </form> -->
-
-                <div class="join border-1 rounded-full">
-                    <input class="input input-ghost focus:outline-none join-item rounded-l-full"
-                        placeholder="Search Product" />
-                    <button class="btn btn-ghost join-item rounded-r-full"><i data-lucide="search"></i></button>
-                </div>
-
-                <div class="flex items-center">
-                    <i data-lucide="user" class=""></i>
-                    <a href="#" class="">Account</a>
-                </div>
-
-                <div class="flex items-center">
-                    <i data-lucide="shopping-cart" class=""></i>
-                    <a href="#" class="">Cart</a>
+                    <!-- Mobile Search Dropdown -->
+                    <div id="mobile-search-dropdown"
+                        class="hidden absolute top-12 left-0 right-0 bg-white border border-gray-200 rounded-2xl shadow-lg p-4 z-50">
+                        <p class="font-semibold text-sm mb-3">Popular Categories</p>
+                        <div class="grid grid-cols-2 gap-2">
+                            <a href="#"
+                                class="flex items-center gap-2 p-2 rounded-xl hover:bg-gray-50 border border-gray-100">
+                                <img src="image/furniture.png" class="w-8 h-8 object-contain" alt="Furniture">
+                                <div>
+                                    <p class="font-semibold text-xs">Furniture</p>
+                                    <p class="text-xs text-gray-400">240 Items</p>
+                                </div>
+                            </a>
+                            <a href="headphone.html"
+                                class="flex items-center gap-2 p-2 rounded-xl hover:bg-gray-50 border border-gray-100">
+                                <img src="image/airpodmax-blue.png" class="w-8 h-8 object-contain" alt="Headphone">
+                                <div>
+                                    <p class="font-semibold text-xs">Headphone</p>
+                                    <p class="text-xs text-gray-400">240 Items</p>
+                                </div>
+                            </a>
+                            <a href="#"
+                                class="flex items-center gap-2 p-2 rounded-xl hover:bg-gray-50 border border-gray-100">
+                                <img src="image/victoria_coral-multicolor_1.png" class="w-8 h-8 object-contain"
+                                    alt="Shoe">
+                                <div>
+                                    <p class="font-semibold text-xs">Shoe</p>
+                                    <p class="text-xs text-gray-400">240 Items</p>
+                                </div>
+                            </a>
+                            <a href="#"
+                                class="flex items-center gap-2 p-2 rounded-xl hover:bg-gray-50 border border-gray-100">
+                                <img src="image/macbook-13-min.png" class="w-8 h-8 object-contain" alt="Laptop">
+                                <div>
+                                    <p class="font-semibold text-xs">Laptop</p>
+                                    <p class="text-xs text-gray-400">240 Items</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -372,7 +542,7 @@
 
     <section>
 
-        <p class="reveal text-xl md:text-3xl font-bold">Get Up To 70% off</p>
+        <p class="reveal text-2xl md:text-3xl font-bold">Get Up To 70% off</p>
 
         <div class="reveal grid grid-cols-1 md:grid-cols-4 gap-4">
 
@@ -823,7 +993,7 @@
     </section>
 
 
-    <div class="bg-[#ffe6cc] sm:p-20 sm:px-30 flex items-center justify-between">
+    <div class="bg-[#ffe6cc] p-10 sm:p-20 sm:px-30 flex items-center justify-between">
 
         <!-- Left: Text -->
         <div class="flex flex-col gap-4">
@@ -837,7 +1007,7 @@
         </div>
 
         <!-- Right: Card Stack (hidden on mobile) -->
-        <div class="hidden sm:block relative w-[420px] h-[320px]">
+        <div class="hidden sm:block relative w-[420px] h-[320px] bottom-16">
             <!-- Bottom card (gold) -->
             <img src="image/visa-card-03.svg" class="absolute w-[300px] bottom-0 right-0 rotate-[-15deg]" alt="">
             <!-- Middle card (red) -->

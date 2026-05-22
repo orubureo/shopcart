@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title -->
+    <title>Shopcart - Check Out</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="image/Shopcart-favicon.jpg" type="jpg">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Rethink+Sans:ital,wght@0,400..800;1,400..800&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Tailwind CSS & DaisyUI Comp -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+</head>
+
+<body>
+    <!-- Page Transition Overlay -->
+    <div id="page-transition"
+        class="fixed inset-0 bg-white z-[9999] flex items-center justify-center pointer-events-none opacity-0 transition-opacity duration-300">
+        <div class="flex flex-col items-center gap-3">
+            <img src="image/Shopcart-logo.jpg" class="w-24 animate-pulse" alt="Loading">
+            <span class="loading loading-dots loading-md text-green-700"></span>
+        </div>
+    </div>
+    <header>
+        <div class="header flex items-center">
+            <div class="flex items-center gap-2 ">
+                <i data-lucide="phone" class="w-4"></i>
+                <p>+001234567890</p>
+            </div>
+
+            <p class="ms-hidden">Get 50% Off on Selected Items | Shop Now</p>
+
+            <div class="flex align-center gap-10">
+                <div class="cus-dropdown">
+                    <button class="cus-dropdown-btn" style="color: white; font-size: small;">
+                        Eng
+                        <i class="cus-dropdown-icon" data-lucide="chevron-down"></i>
+                    </button>
+
+                    <div class="cus-dropdown-menu">
+                        <a href="#">Bangla</a>
+                        <a href="#">Arabic</a>
+                        <a href="#">Urdu</a>
+                    </div>
+                </div>
+
+                <div class="cus-dropdown">
+                    <button class="cus-dropdown-btn" style="color: white; font-size: small;">
+                        Location
+                        <i class="cus-dropdown-icon" data-lucide="chevron-down"></i>
+                    </button>
+
+                    <div class="cus-dropdown-menu">
+                        <a href="#">Dhaka</a>
+                        <a href="#">USA</a>
+                        <a href="#">India</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cus-navbar">
+            <img src="image/Shopcart-logo.jpg" alt="" class="logo">
+
+            <div class="navbar-end md:hidden">
+                <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h7" />
+                        </svg>
+                    </div>
+
+                    <ul tabindex="-1"
+                        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-52 p-2 shadow">
+
+                        <!-- Category dropdown -->
+                        <li>
+                            <div class="cus-dropdown w-full">
+                                <button class="cus-dropdown-btn w-full flex justify-between">
+                                    Category
+                                    <i class="cus-dropdown-icon" data-lucide="chevron-down"></i>
+                                </button>
+                                <div class="cus-dropdown-menu static shadow-none border-0 ps-4">
+                                    <a href="#"><i data-lucide="smartphone"></i> Electronics</a>
+                                    <a href="#"><i data-lucide="shirt"></i> Clothing</a>
+                                    <a href="#"><i data-lucide="shopping-bag"></i> Accessories</a>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li><a href="#">Deals</a></li>
+                        <li><a href="#">What's New</a></li>
+                        <li><a href="#">Delivery</a></li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Desktop nav (hidden on mobile) -->
+            <div class="hidden md:flex items-center justify-between gap-10 w-full">
+                <div class="flex items-center gap-10">
+                    <div class="cus-dropdown">
+                        <button class="cus-dropdown-btn">
+                            Category
+                            <i class="cus-dropdown-icon" data-lucide="chevron-down"></i>
+                        </button>
+                        <div class="cus-dropdown-menu">
+                            <a href="#"><i data-lucide="smartphone"></i> Electronics</a>
+                            <a href="#"><i data-lucide="shirt"></i> Clothing</a>
+                            <a href="#"><i data-lucide="shopping-bag"></i> Accessories</a>
+                        </div>
+                    </div>
+                    <a href="#" class="text-black no-underline">Deals</a>
+                    <a href="#" class="text-black no-underline">What's New</a>
+                    <a href="#" class="text-black no-underline">Delivery</a>
+                </div>
+
+
+                <!-- <form class="flex align-center">
+                    <input type="search" name="" id="" class="p-1 border-1px solid rgb(124, 120, 120) rounded-lg"
+                        placeholder="Search Product">
+
+                    <button type="submit"><i data-lucide="search"></i></button>
+                </form> -->
+
+                <div class="join border-1 rounded-full">
+                    <input class="input input-ghost focus:outline-none join-item rounded-l-full"
+                        placeholder="Search Product" />
+                    <button class="btn btn-ghost join-item rounded-r-full"><i data-lucide="search"></i></button>
+                </div>
+
+                <div class="flex items-center">
+                    <i data-lucide="user" class=""></i>
+                    <a href="#" class="">Account</a>
+                </div>
+
+                <div class="flex items-center">
+                    <i data-lucide="shopping-cart" class=""></i>
+                    <a href="#" class="">Cart</a>
+                </div>
+            </div>
+
+
+        </div>
+
+    </header>
+
+    <div class="flex flex-col lg:flex-row gap-6 p-4 md:m-15">
+
+        <!-- Left: Review + Delivery -->
+        <div class="space-y-5 w-full lg:w-2/3">
+
+            <!-- Review Item -->
+            <div class="border border-gray-200 rounded-xl p-4 md:p-6 space-y-4">
+                <h1 class="font-bold text-xl">Review Item And Shipping</h1>
+
+                <div
+                    class="flex flex-col sm:flex-row items-start sm:items-center justify-between rounded-xl p-3 md:p-4 gap-4">
+                    <div class="flex items-center gap-4">
+                        <div class="bg-[#f5f6f6] rounded-xl p-3 md:p-4 shrink-0">
+                            <img id="order-color-img" src="" alt="Selected Color"
+                                class="w-16 h-16 md:w-20 md:h-20 object-contain">
+                        </div>
+                        <div class="space-y-1">
+                            <p class="font-bold text-base md:text-lg" id="order-product"></p>
+                            <p class="text-sm text-gray-500">Color: <span id="color"
+                                    class="text-black font-medium"></span></p>
+                        </div>
+                    </div>
+                    <div class="text-left sm:text-right space-y-1 shrink-0">
+                        <p class="font-bold text-base md:text-lg" id="order-price"></p>
+                        <p class="text-sm text-gray-500">Quantity: <span id="order-quantity"
+                                class="text-black font-medium"></span></p>
+                    </div>
+                </div>
+
+                <!-- Returning Customer -->
+                <label class="flex items-center gap-2 text-sm cursor-pointer">
+                    <input type="checkbox" class="checkbox checkbox-sm">
+                    Returning Customer?
+                </label>
+            </div>
+
+            <!-- Delivery Information -->
+            <div class="border border-gray-200 rounded-xl p-4 md:p-6 space-y-4">
+                <div class="flex items-center justify-between">
+                    <h1 class="font-bold text-xl">Delivery Information</h1>
+                    <button id="edit-delivery" class="btn btn-sm hidden">Edit</button>
+                    <button id="save-delivery" class="btn btn-sm">Save Information</button>
+                </div>
+
+                <!-- Saved Summary (hidden by default) -->
+                <div id="delivery-summary" class="hidden space-y-1 text-sm">
+                    <p class="font-bold" id="summary-name"></p>
+                    <p id="summary-address"></p>
+                    <p id="summary-phone"></p>
+                    <p id="summary-email"></p>
+                </div>
+
+                <!-- Form (shown by default) -->
+                <div id="delivery-form" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div class="space-y-1">
+                        <label class="text-sm font-medium">First Name*</label>
+                        <input id="first-name" type="text" placeholder="Type here..."
+                            class="input input-bordered w-full input-sm">
+                    </div>
+                    <div class="space-y-1">
+                        <label class="text-sm font-medium">Last Name*</label>
+                        <input id="last-name" type="text" placeholder="Type here..."
+                            class="input input-bordered w-full input-sm">
+                    </div>
+                    <div class="sm:col-span-2 space-y-1">
+                        <label class="text-sm font-medium">Address*</label>
+                        <input id="address" type="text" placeholder="Type here..."
+                            class="input input-bordered w-full input-sm">
+                    </div>
+                    <div class="space-y-1">
+                        <label class="text-sm font-medium">City/ Town*</label>
+                        <input id="city" type="text" placeholder="Type here..."
+                            class="input input-bordered w-full input-sm">
+                    </div>
+                    <div class="space-y-1">
+                        <label class="text-sm font-medium">Zip Code*</label>
+                        <input id="zip" type="text" placeholder="Type here..."
+                            class="input input-bordered w-full input-sm">
+                    </div>
+                    <div class="space-y-1">
+                        <label class="text-sm font-medium">Mobile*</label>
+                        <input id="phone" type="text" placeholder="Type here..."
+                            class="input input-bordered w-full input-sm">
+                    </div>
+                    <div class="space-y-1">
+                        <label class="text-sm font-medium">Email*</label>
+                        <input id="delivery-email" type="email" placeholder="Type here..."
+                            class="input input-bordered w-full input-sm">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right: Order Summary -->
+        <div class="border border-gray-200 rounded-xl p-4 md:p-6 space-y-4 w-full lg:w-1/3 h-fit">
+            <h1 class="font-bold text-xl">Order Summary</h1>
+
+            <!-- Coupon -->
+            <div class="flex gap-2">
+                <input type="text" placeholder="Enter Coupon Code" class="input input-bordered input-sm flex-1 min-w-0">
+                <button class="btn btn-sm bg-[#1a3c2e] text-white hover:bg-[#2a5c44] shrink-0">Apply coupon</button>
+            </div>
+
+            <div class="border-t border-gray-200 pt-4 space-y-3">
+                <h2 class="font-semibold">Payment Details</h2>
+
+                <!-- Payment Options -->
+                <div class="grid grid-cols-2 sm:grid-cols-1 gap-2 text-sm">
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="radio" name="payment" class="radio radio-sm"> Cash on Delivery
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="radio" name="payment" class="radio radio-sm"> Shopcart Card
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="radio" name="payment" class="radio radio-sm"> Paypal
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="radio" name="payment" class="radio radio-sm" checked> Credit or Debit card
+                    </label>
+                </div>
+
+                <!-- Card Logos -->
+                <div class="flex gap-2 items-center flex-wrap">
+                    <img src="image/Amazon.png" class="w-10 border border-gray-200 p-1 rounded" alt="Amazon">
+                    <img src="image/mastercard.png" class="w-10 border border-gray-200 p-1 rounded" alt="Mastercard">
+                    <img src="image/visa.png" class="w-10 border border-gray-200 p-1 rounded" alt="Visa">
+                </div>
+            </div>
+
+            <!-- Card Fields -->
+            <div class="space-y-3">
+                <div class="space-y-1">
+                    <label class="text-sm font-medium" for="card-email">Email</label>
+                    <input id="card-email" type="email" placeholder="Type here..."
+                        class="input input-bordered w-full input-sm">
+                </div>
+                <div class="space-y-1">
+                    <label class="text-sm font-medium" for="card-holder-name">Card Holder Name</label>
+                    <input id="card-holder-name" type="text" placeholder="Type here..."
+                        class="input input-bordered w-full input-sm">
+                </div>
+                <div class="space-y-1">
+                    <label class="text-sm font-medium" for="card-number">Card Number</label>
+                    <div class="input input-bordered input-sm flex items-center gap-2">
+                        <i data-lucide="credit-card" class="w-4 h-4 text-gray-400 shrink-0"></i>
+                        <input id="card-number" type="text" placeholder="0000 0000 0000 0000"
+                            class="flex-1 outline-none bg-transparent text-sm min-w-0" maxlength="19">
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <div class="space-y-1">
+                        <label class="text-sm font-medium" for="card-expiry">Expiry</label>
+                        <input id="card-expiry" type="text" placeholder="MM / YY"
+                            class="input input-bordered w-full input-sm" maxlength="7">
+                    </div>
+                    <div class="space-y-1">
+                        <label class="text-sm font-medium" for="card-cvc">CVC</label>
+                        <input id="card-cvc" type="text" placeholder="***" class="input input-bordered w-full input-sm"
+                            maxlength="3">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Total + Place Order -->
+            <div class="border-t border-gray-200 pt-4 space-y-2 text-sm">
+                <div class="flex justify-between">
+                    <span class="text-gray-500">Subtotal</span>
+                    <span class="font-medium" id="order-subtotal"></span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-gray-500">Shipping</span>
+                    <span class="font-medium text-green-600">Free</span>
+                </div>
+                <div class="flex justify-between font-bold text-base border-t border-gray-200 pt-2">
+                    <span>Total</span>
+                    <span id="order-total"></span>
+                </div>
+            </div>
+
+            <button id="place-order" class="btn w-full bg-[#1a3c2e] text-white hover:bg-[#2a5c44]">
+                Place Order
+            </button>
+        </div>
+    </div>
+
+    <section class="flex flex-col gap-7">
+        <p class="reveal text-2xl md:text-3xl font-bold">Services To Help You Shop</p>
+        <div class="grid grid-cols-1 gap-5 md:grid-cols-3 ">
+            <div class="bg-[#f5f6f6] rounded-xl">
+
+                <div class="p-10 flex flex-col gap-5">
+                    <p class="font-bold text-2xl">Frequently Asked <br> Questions</p>
+                    <p class="text-xl">Updates on safe Shopping in <br> our Stores</p>
+                </div>
+
+                <img src="image/faq-min.png" class="rounded-b-xl" alt="">
+            </div>
+
+            <div class="bg-[#f5f6f6] rounded-xl">
+
+                <div class="p-10 flex flex-col gap-5">
+                    <p class="font-bold text-2xl">Online Payment <br> Process</p>
+                    <p class="text-xl">Updates on safe Shopping in <br> our Stores</p>
+                </div>
+
+                <img src="image/onlie-payment-min.png" class="rounded-b-xl" alt="">
+            </div>
+
+            <div class="bg-[#f5f6f6] rounded-xl">
+
+                <div class="p-10 flex flex-col gap-5">
+                    <p class="font-bold text-2xl">Home Delivery <br> Options</p>
+                    <p class="text-xl">Updates on safe Shopping in <br> our Stores</p>
+                </div>
+
+                <img src="image/home-delivery-min.png" class="rounded-b-xl" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!-- MOBILE FOOTER (hidden on sm and above) -->
+    <footer class="flex flex-col sm:hidden p-6 border-y border-gray-200 gap-8">
+
+        <!-- 1. Logo + Description -->
+        <div class="flex flex-col gap-4">
+            <img src="image/Shopcart-logo.jpg" class="w-40" alt="">
+            <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat
+                duis enim velit mollit.
+            </p>
+        </div>
+
+        <!-- 2. Nav Links -->
+        <div class="grid grid-cols-2 gap-8">
+            <div class="flex flex-col gap-3">
+                <p class="font-bold text-xl">Department</p>
+                <ul class="flex flex-col gap-2">
+                    <li><a href="#">Fashion</a></li>
+                    <li><a href="#">Education Product</a></li>
+                    <li><a href="#">Frozen Foods</a></li>
+                    <li><a href="#">Beverages</a></li>
+                    <li><a href="#">Organic Grocery</a></li>
+                    <li><a href="#">Office Supplies</a></li>
+                    <li><a href="#">Beauty Products</a></li>
+                    <li><a href="#">Books</a></li>
+                    <li><a href="#">Electronics & Gadgets</a></li>
+                    <li><a href="#">Travel Accessories</a></li>
+                    <li><a href="#">Fitness</a></li>
+                    <li><a href="#">Sneakers</a></li>
+                    <li><a href="#">Toys</a></li>
+                    <li><a href="#">Furniture</a></li>
+                </ul>
+            </div>
+
+            <div class="flex flex-col gap-3">
+                <p class="font-bold text-xl">About Us</p>
+                <ul class="flex flex-col gap-2">
+                    <li><a href="#">About Shopcart</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">News & Blog</a></li>
+                    <li><a href="#">Help</a></li>
+                    <li><a href="#">Press Center</a></li>
+                    <li><a href="#">Shop By Location</a></li>
+                    <li><a href="#">Shopcart Brands</a></li>
+                    <li><a href="#">Affiliate & Partners</a></li>
+                    <li><a href="#">Ideas & Guides</a></li>
+                </ul>
+            </div>
+
+            <div class="flex flex-col gap-3">
+                <p class="font-bold text-xl">Services</p>
+                <ul class="flex flex-col gap-2">
+                    <li><a href="#">Gift Cards</a></li>
+                    <li><a href="#">Mobile App</a></li>
+                    <li><a href="#">Shipping & Delivery</a></li>
+                    <li><a href="#">Order Pickup</a></li>
+                    <li><a href="#">Account Signup</a></li>
+                </ul>
+            </div>
+
+            <div class="flex flex-col gap-3">
+                <p class="font-bold text-xl">Help</p>
+                <ul class="flex flex-col gap-2">
+                    <li><a href="#">Shopcart Help</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">Track Orders</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Feedback</a></li>
+                    <li><a href="#">Security & Fraud</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 3. Accepted Payments -->
+        <div class="space-y-3">
+            <p class="font-bold text-xl">Accepted Payment</p>
+            <div class="grid grid-cols-3 gap-2">
+                <div class="border border-gray-200 p-3 rounded-sm items-center justify-center"><img
+                        src="image/stripe.png" class="w-10 mx-auto" alt="">
+                </div>
+                <div class="border border-gray-200 p-3 rounded-sm items-center justify-center"><img src="image/visa.png"
+                        class="w-10 mx-auto" alt=""></div>
+                <div class="border border-gray-200 p-2 rounded-sm items-center justify-center"><img
+                        src="image/mastercard.png" class="w-9 mx-auto" alt="">
+                </div>
+                <div class="border border-gray-200 p-3 rounded-sm items-center justify-center"><img
+                        src="image/Amazon.png" class="w-10 mx-auto" alt="">
+                </div>
+                <div class="border border-gray-200 p-3 rounded-sm items-center justify-center"><img
+                        src="image/Klarna.png" class="w-10 mx-auto" alt="">
+                </div>
+                <div class="border border-gray-200 p-1 px-6 rounded-sm items-center justify-center"><img
+                        src="image/PayPal.png" class="w-5 mx-auto" alt="">
+                </div>
+                <div class="border border-gray-200 p-2 rounded-sm items-center justify-center"><img
+                        src="image/ApplePay.png" class="w-10 mx-auto" alt="">
+                </div>
+                <div class="border border-gray-200 p-2 rounded-sm items-center justify-center"><img
+                        src="image/GooglePay.png" class="w-10 mx-auto" alt="">
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+
+    <!-- DESKTOP FOOTER (hidden below sm) -->
+    <footer class="hidden sm:flex justify-between p-10 mt-10 mx-10 border-y border-gray-200">
+
+        <div class="flex flex-col gap-5 w-[40%]">
+            <div>
+                <img src="image/Shopcart-logo.jpg" class="w-50" alt="">
+            </div>
+            <p>Amet minim mollit non deserunt ullamco est sit aliqua <br> dolor do amet sint. Velit officia consequat
+                duis enim velit <br> mollit.
+            </p>
+            <p class="font-bold text-xl">Accepted Payment</p>
+            <div class="flex flex-col gap-2">
+                <div class="flex gap-2 items-center">
+                    <div class="border border-gray-200 p-3 rounded-sm"><img src="image/stripe.png" class="w-10" alt="">
+                    </div>
+                    <div class="border border-gray-200 p-3 rounded-sm"><img src="image/visa.png" class="w-10" alt="">
+                    </div>
+                    <div class="border border-gray-200 p-2 rounded-sm"><img src="image/mastercard.png" class="w-9"
+                            alt=""></div>
+                    <div class="border border-gray-200 p-3 rounded-sm"><img src="image/Amazon.png" class="w-10" alt="">
+                    </div>
+                </div>
+                <div class="flex gap-3 items-center">
+                    <div class="border border-gray-200 p-3 rounded-sm"><img src="image/Klarna.png" class="w-10" alt="">
+                    </div>
+                    <div class="border border-gray-200 p-1 px-6 rounded-sm"><img src="image/PayPal.png" class="w-5"
+                            alt=""></div>
+                    <div class="border border-gray-200 p-2 rounded-sm"><img src="image/ApplePay.png" class="w-10"
+                            alt=""></div>
+                    <div class="border border-gray-200 p-2 rounded-sm"><img src="image/GooglePay.png" class="w-10"
+                            alt=""></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex gap-10 w-[60%]">
+            <div class="flex flex-col gap-5">
+                <p class="font-bold text-xl">Department</p>
+                <ul class="flex flex-col gap-2">
+                    <li><a href="#">Fashion</a></li>
+                    <li><a href="#">Education Product</a></li>
+                    <li><a href="#">Frozen Foods</a></li>
+                    <li><a href="#">Beverages</a></li>
+                    <li><a href="#">Organic Grocery</a></li>
+                    <li><a href="#">Office Supplies</a></li>
+                    <li><a href="#">Beauty Products</a></li>
+                    <li><a href="#">Books</a></li>
+                    <li><a href="#">Electronics & Gadgets</a></li>
+                    <li><a href="#">Travel Accessories</a></li>
+                    <li><a href="#">Fitness</a></li>
+                    <li><a href="#">Sneakers</a></li>
+                    <li><a href="#">Toys</a></li>
+                    <li><a href="#">Furniture</a></li>
+                </ul>
+            </div>
+            <div class="flex flex-col gap-5">
+                <p class="font-bold text-xl">About Us</p>
+                <ul class="flex flex-col gap-2">
+                    <li><a href="#">About Shopcart</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">News & Blog</a></li>
+                    <li><a href="#">Help</a></li>
+                    <li><a href="#">Press Center</a></li>
+                    <li><a href="#">Shop By Location</a></li>
+                    <li><a href="#">Shopcart Brands</a></li>
+                    <li><a href="#">Affiliate & Partners</a></li>
+                    <li><a href="#">Ideas & Guides</a></li>
+                </ul>
+            </div>
+            <div class="flex flex-col gap-5">
+                <p class="font-bold text-xl">Services</p>
+                <ul class="flex flex-col gap-2">
+                    <li><a href="#">Gift Cards</a></li>
+                    <li><a href="#">Mobile App</a></li>
+                    <li><a href="#">Shipping & Delivery</a></li>
+                    <li><a href="#">Order Pickup</a></li>
+                    <li><a href="#">Account Signup</a></li>
+                </ul>
+            </div>
+            <div class="flex flex-col gap-5">
+                <p class="font-bold text-xl">Help</p>
+                <ul class="flex flex-col gap-2">
+                    <li><a href="#">Shopcart Help</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">Track Orders</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Feedback</a></li>
+                    <li><a href="#">Security & Fraud</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </footer>
+
+    <div class="flex flex-col p-10 px-10 gap-10 md:flex-row md:justify-between">
+
+        <div class="flex flex-col gap-2 md:flex-row md:gap-20 text-[16px]">
+            <div class="flex gap-2 items-center">
+                <i data-lucide="briefcase" class="text-[#c34482]"></i>
+                <p>Become Seller</p>
+            </div>
+            <div class="flex gap-2 items-center">
+                <i data-lucide="gift" class="text-[#c34482]"></i>
+                <p>Gift Cards</p>
+            </div>
+            <div class="flex gap-2 items-center">
+                <i data-lucide="message-circle" class="text-[#c34482]"></i>
+                <p>Help Canter</p>
+            </div>
+        </div>
+
+        <div class="flex flex-col gap-2 md:flex-row md:gap-20 text-[14px]">
+            <p>Term Of Service</p>
+            <p>Privacy & Policy</p>
+            <p>All Right reserved by © 2026 Shopcart.ng</p>
+        </div>
+    </div>
+
+    <script type="module" src="./js/index.js"></script>
+    <script>lucide.createIcons();</script>
+
+    <!-- Order Success Modal -->
+    <div id="order-modal" class="fixed inset-0 bg-black/50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-2xl p-10 w-[420px] text-center space-y-5 mx-4">
+
+            <!-- Confetti / decorative background -->
+            <div class="relative flex items-center justify-center h-48 rounded-xl overflow-hidden"
+                style="background: linear-gradient(135deg, #dbeafe 0%, #dcfce7 100%);">
+
+                <!-- Decorative dots -->
+                <span class="absolute top-4 left-8 w-2 h-2 rounded-full bg-red-400"></span>
+                <span class="absolute top-10 right-12 w-2 h-2 rounded-full bg-blue-500"></span>
+                <span class="absolute bottom-8 left-16 w-2 h-2 rounded-full bg-yellow-400"></span>
+                <span class="absolute bottom-6 right-10 w-3 h-3 rounded-full bg-purple-400"></span>
+                <span class="absolute top-6 left-1/2 w-1.5 h-1.5 rounded-full bg-green-400"></span>
+
+                <!-- Checkmark circle -->
+                <div class="w-20 h-20 rounded-full bg-green-500 flex items-center justify-center shadow-lg z-10">
+                    <i data-lucide="check" class="text-white w-10 h-10"></i>
+                </div>
+            </div>
+
+            <div class="space-y-2">
+                <h2 class="text-xl font-bold">Your order has been accepted</h2>
+                <p class="text-sm text-gray-400">Transaction ID: <span id="transaction-id"></span></p>
+            </div>
+
+            <button id="continue-shopping" onclick="window.location.href='index.html'"
+                class="btn bg-orange-400 hover:bg-orange-500 text-white border-none w-full rounded-full">
+                Continue Shopping
+            </button>
+        </div>
+    </div>
+
+</body>
+
+</html>

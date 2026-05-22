@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title -->
+    <title>Shopcart - Headphones</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="image/Shopcart-favicon.jpg" type="jpg">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Rethink+Sans:ital,wght@0,400..800;1,400..800&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Tailwind CSS & DaisyUI Comp -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+</head>
+
+<body>
+    <!-- Page Transition Overlay -->
+    <div id="page-transition"
+        class="fixed inset-0 bg-white z-[9999] flex items-center justify-center pointer-events-none opacity-0 transition-opacity duration-300">
+        <div class="flex flex-col items-center gap-3">
+            <img src="image/Shopcart-logo.jpg" class="w-24 animate-pulse" alt="Loading">
+            <span class="loading loading-dots loading-md text-green-700"></span>
+        </div>
+    </div>
+    <header>
+        <div class="header flex items-center">
+            <div class="flex items-center gap-2 ">
+                <i data-lucide="phone" class="w-4"></i>
+                <p>+001234567890</p>
+            </div>
+
+            <p class="ms-hidden">Get 50% Off on Selected Items | Shop Now</p>
+
+            <div class="flex align-center gap-10">
+                <div class="cus-dropdown">
+                    <button class="cus-dropdown-btn" style="color: white; font-size: small;">
+                        Eng
+                        <i class="cus-dropdown-icon" data-lucide="chevron-down"></i>
+                    </button>
+
+                    <div class="cus-dropdown-menu">
+                        <a href="#">Bangla</a>
+                        <a href="#">Arabic</a>
+                        <a href="#">Urdu</a>
+                    </div>
+                </div>
+
+                <div class="cus-dropdown">
+                    <button class="cus-dropdown-btn" style="color: white; font-size: small;">
+                        Location
+                        <i class="cus-dropdown-icon" data-lucide="chevron-down"></i>
+                    </button>
+
+                    <div class="cus-dropdown-menu">
+                        <a href="#">Dhaka</a>
+                        <a href="#">USA</a>
+                        <a href="#">India</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cus-navbar">
+            <img src="image/Shopcart-logo.jpg" alt="" class="logo">
+
+            <div class="navbar-end md:hidden">
+                <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h7" />
+                        </svg>
+                    </div>
+
+                    <ul tabindex="-1"
+                        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-52 p-2 shadow">
+
+                        <!-- Category dropdown -->
+                        <li>
+                            <div class="cus-dropdown w-full">
+                                <button class="cus-dropdown-btn w-full flex justify-between">
+                                    Category
+                                    <i class="cus-dropdown-icon" data-lucide="chevron-down"></i>
+                                </button>
+                                <div class="cus-dropdown-menu static shadow-none border-0 ps-4">
+                                    <a href="#"><i data-lucide="smartphone"></i> Electronics</a>
+                                    <a href="#"><i data-lucide="shirt"></i> Clothing</a>
+                                    <a href="#"><i data-lucide="shopping-bag"></i> Accessories</a>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li><a href="#">Deals</a></li>
+                        <li><a href="#">What's New</a></li>
+                        <li><a href="#">Delivery</a></li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Desktop nav (hidden on mobile) -->
+            <div class="hidden md:flex items-center justify-between gap-10 w-full">
+                <div class="flex items-center gap-10">
+                    <div class="cus-dropdown">
+                        <button class="cus-dropdown-btn">
+                            Category
+                            <i class="cus-dropdown-icon" data-lucide="chevron-down"></i>
+                        </button>
+                        <div class="cus-dropdown-menu">
+                            <a href="#"><i data-lucide="smartphone"></i> Electronics</a>
+                            <a href="#"><i data-lucide="shirt"></i> Clothing</a>
+                            <a href="#"><i data-lucide="shopping-bag"></i> Accessories</a>
+                        </div>
+                    </div>
+                    <a href="#" class="text-black no-underline">Deals</a>
+                    <a href="#" class="text-black no-underline">What's New</a>
+                    <a href="#" class="text-black no-underline">Delivery</a>
+                </div>
+
+
+                <!-- <form class="flex align-center">
+                    <input type="search" name="" id="" class="p-1 border-1px solid rgb(124, 120, 120) rounded-lg"
+                        placeholder="Search Product">
+
+                    <button type="submit"><i data-lucide="search"></i></button>
+                </form> -->
+
+                <div class="join border-1 rounded-full">
+                    <input class="input input-ghost focus:outline-none join-item rounded-l-full"
+                        placeholder="Search Product" />
+                    <button class="btn btn-ghost join-item rounded-r-full"><i data-lucide="search"></i></button>
+                </div>
+
+                <div class="flex items-center">
+                    <i data-lucide="user" class=""></i>
+                    <a href="#" class="">Account</a>
+                </div>
+
+                <div class="flex items-center">
+                    <i data-lucide="shopping-cart" class=""></i>
+                    <a href="#" class="">Cart</a>
+                </div>
+            </div>
+
+
+        </div>
+
+    </header>
+
+    <div class="bg-[#ffe6cc] flex items-center justify-between mx-4 md:mx-10 min-h-70 rounded-2xl overflow-hidden">
+
+        <div class="p-6 md:ml-10 md:p-10 space-y-3 w-full md:w-auto text-center md:text-left">
+            <p class="text-sm text-orange-500 font-semibold tracking-wide uppercase">Limited Offer</p>
+            <h1 class="text-2xl md:text-3xl font-bold leading-snug">
+                Grab up to 50% off on <br> Selected Headphone
+            </h1>
+            <p class="text-sm text-gray-500">Don't miss out — shop the best deals before they're gone.</p>
+            <button class="cus-btn">Buy Now</button>
+        </div>
+
+        <!-- Hidden on mobile, visible on md and above -->
+        <div class="hidden md:flex pt-5 shrink-0">
+            <img src="image/ladyheadphone-1.png" class="w-60 mr-40" alt="Lady with headphone">
+        </div>
+
+    </div>
+
+    <section>
+        <p class="reveal text-2xl md:text-3xl font-bold">Headphones For You!</p>
+
+        <div class="flex gap-5 py-4 md:flex-row overflow-auto">
+            <button class="border border-black rounded-full font-bold btn">Gadgets</button>
+            <button class="border border-black rounded-full font-bold btn">Fashion</button>
+            <button class="border border-black rounded-full font-bold btn">Toys</button>
+            <button class="border border-black rounded-full font-bold btn">Education</button>
+            <button class="border border-black rounded-full font-bold btn">Beauty</button>
+            <button class="border border-black rounded-full font-bold btn">Fitness</button>
+            <button class="border border-black rounded-full font-bold btn">Furniture</button>
+            <button class="border border-black rounded-full font-bold btn">Sneakers</button>
+        </div>
+
+        <div class="flex flex-col gap-10">
+
+            <div class=" grid grid-cols-2 gap-5 md:grid-cols-4">
+                <div>
+                    <div class="bg-[#f5f6f6] rounded-xl relative">
+
+                        <div>
+                            <img src="image/Wireless-Earbuds-Bluetooth-5.png">
+                        </div>
+
+                        <div class="absolute right-5 top-5 p-3 bg-white rounded-full">
+                            <i class="w-4 h-4 text-gray-400" data-lucide="heart"></i>
+                        </div>
+                    </div>
+
+                    <div class="bg-white pt-4 rounded-b-xl flex flex-col gap-3">
+                        <div class="flex justify-between text-[17px] font-bold">
+                            <p>Laptop sleeve Macbook</p>
+                            <p>$59.00</p>
+                        </div>
+                        <p class="text-xs">Organic Cotton, fairtrade certified</p>
+                        <div class="text-[rgb(8,172,10)] flex">
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                        </div>
+                        <div class="btn carousel-btn">Add to cart</div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="bg-[#f5f6f6] rounded-xl relative">
+
+                        <a href="airpodmax.html">
+                            <div>
+                                <img src="image/airpod-max-min.png">
+                            </div>
+
+                            <div class="absolute right-5 top-5 p-3 bg-white rounded-full">
+                                <i class="w-4 h-4 text-gray-400" data-lucide="heart"></i>
+                            </div>
+                        </a>
+
+                    </div>
+
+                    <div class="bg-white pt-4 rounded-b-xl flex flex-col gap-3">
+                        <div class="flex justify-between text-[17px] font-bold">
+                            <p>AirPods Max</p>
+                            <p>$559.00</p>
+                        </div>
+                        <p class="text-xs">A perfect balance of high-fidelity audio</p>
+                        <div class="text-[rgb(8,172,10)] flex">
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                        </div>
+                        <button class="carousel-btn btn">Add to cart</button>
+                    </div>
+                </div>
+
+                <div>
+
+                    <div class="bg-[#f5f6f6] rounded-xl relative">
+
+                        <div>
+                            <img src="image/Generic-700-Noise-Cancelling-Headphones.png">
+                        </div>
+
+                        <div class="absolute right-5 top-5 p-3 bg-white rounded-full">
+                            <i class="w-4 h-4 text-gray-400" data-lucide="heart"></i>
+                        </div>
+                    </div>
+
+                    <div class="bg-white pt-4 rounded-b-xl flex flex-col gap-3">
+                        <div class="flex justify-between text-[17px] font-bold">
+                            <p>Flower Laptop Sleeve</p>
+                            <p>$39.00</p>
+                        </div>
+                        <p class="text-xs">15 in. x 10 in. -Flap top closure</p>
+                        <div class="text-[rgb(8,172,10)] flex">
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                        </div>
+                        <div class="btn carousel-btn">Add to cart</div>
+                    </div>
+                </div>
+
+                <div>
+
+                    <div class="bg-[#f5f6f6] rounded-xl relative">
+
+                        <div>
+                            <img src="image/vivefox.headphone.png" class="w-70 mx-auto p-10">
+                        </div>
+
+                        <div class="absolute right-5 top-5 p-3 bg-white rounded-full">
+                            <i class="w-4 h-4 text-gray-400" data-lucide="heart"></i>
+                        </div>
+                    </div>
+
+                    <div class="bg-white pt-4 rounded-b-xl flex flex-col gap-3">
+                        <div class="flex justify-between text-[17px] font-bold">
+                            <p>Supreme Water Bottle</p>
+                            <p>$19.00</p>
+                        </div>
+                        <p class="text-xs">Table with air purifier, stained veneer/black</p>
+                        <div class="text-[rgb(8,172,10)] flex">
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                        </div>
+                        <div class="btn carousel-btn">Add to cart</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class=" grid grid-cols-2 gap-5 md:grid-cols-4">
+                <div>
+                    <div class="bg-[#f5f6f6] rounded-xl relative">
+
+                        <div>
+                            <img src="image/jbl-tune-500.png" class="w-70 mx-auto p-10">
+                        </div>
+
+                        <div class="absolute right-5 top-5 p-3 bg-white rounded-full">
+                            <i class="w-4 h-4 text-gray-400" data-lucide="heart"></i>
+                        </div>
+                    </div>
+
+                    <div class="bg-white pt-4 rounded-b-xl flex flex-col gap-3">
+                        <div class="flex justify-between text-[17px] font-bold">
+                            <p>Laptop sleeve Macbook</p>
+                            <p>$59.00</p>
+                        </div>
+                        <p class="text-xs">Organic Cotton, fairtrade certified</p>
+                        <div class="text-[rgb(8,172,10)] flex">
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                        </div>
+                        <div class="btn carousel-btn">Add to cart</div>
+                    </div>
+                </div>
+
+                <div>
+
+                    <div class="bg-[#f5f6f6] rounded-xl relative">
+
+                        <div>
+                            <img src="image/tagry-bluetooth.png" class="w-70 mx-auto p-10">
+                        </div>
+
+                        <div class="absolute right-5 top-5 p-3 bg-white rounded-full">
+                            <i class="w-4 h-4 text-gray-400" data-lucide="heart"></i>
+                        </div>
+                    </div>
+
+                    <div class="bg-white pt-4 rounded-b-xl flex flex-col gap-3">
+                        <div class="flex justify-between text-[17px] font-bold">
+                            <p>AirPods Max</p>
+                            <p>$559.00</p>
+                        </div>
+                        <p class="text-xs">A perfect balance of high-fidelity audio</p>
+                        <div class="text-[rgb(8,172,10)] flex">
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                        </div>
+                        <div class="btn carousel-btn">Add to cart</div>
+                    </div>
+                </div>
+
+                <div>
+
+                    <div class="bg-[#f5f6f6] rounded-xl relative">
+
+                        <div>
+                            <img src="image/monster-mnflex.webp">
+                        </div>
+
+                        <div class="absolute right-5 top-5 p-3 bg-white rounded-full">
+                            <i class="w-4 h-4 text-gray-400" data-lucide="heart"></i>
+                        </div>
+                    </div>
+
+                    <div class="bg-white pt-4 rounded-b-xl flex flex-col gap-3">
+                        <div class="flex justify-between text-[17px] font-bold">
+                            <p>Flower Laptop Sleeve</p>
+                            <p>$39.00</p>
+                        </div>
+                        <p class="text-xs">15 in. x 10 in. -Flap top closure</p>
+                        <div class="text-[rgb(8,172,10)] flex">
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                        </div>
+                        <div class="btn carousel-btn">Add to cart</div>
+                    </div>
+                </div>
+
+                <div>
+
+                    <div class="bg-[#f5f6f6] rounded-xl relative">
+
+                        <div>
+                            <img src="image/Mpow-CH6.png" class="h-60 mx-auto">
+                        </div>
+
+                        <div class=" absolute right-5 top-5 p-3 bg-white rounded-full">
+                            <i class="w-4 h-4 text-gray-400" data-lucide="heart"></i>
+                        </div>
+                    </div>
+
+                    <div class="bg-white pt-4 rounded-b-xl flex flex-col gap-3">
+                        <div class="flex justify-between text-[17px] font-bold">
+                            <p>Supreme Water Bottle</p>
+                            <p>$19.00</p>
+                        </div>
+                        <p class="text-xs">Table with air purifier, stained veneer/black</p>
+                        <div class="text-[rgb(8,172,10)] flex">
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                        </div>
+                        <div class="btn carousel-btn">Add to cart</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class=" grid grid-cols-2 gap-5 md:grid-cols-4">
+                <div>
+                    <div class="bg-[#f5f6f6] rounded-xl relative">
+
+                        <div>
+                            <img src="image/taotronics-earbuds.png" class="w-70 mx-auto p-10">
+                        </div>
+
+                        <div class="absolute right-5 top-5 p-3 bg-white rounded-full">
+                            <i class="w-4 h-4 text-gray-400" data-lucide="heart"></i>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-4 rounded-b-xl flex flex-col gap-3">
+                        <div class="flex justify-between text-[17px] font-bold">
+                            <p>Laptop sleeve Macbook</p>
+                            <p>$59.00</p>
+                        </div>
+                        <p class="text-xs">Organic Cotton, fairtrade certified</p>
+                        <div class="text-[rgb(8,172,10)] flex">
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                        </div>
+                        <div class="btn carousel-btn">Add to cart</div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="bg-[#f5f6f6] rounded-xl relative">
+
+                        <div>
+                            <img src="image/soundpeats-aptx.png" class="w-70 mx-auto p-10">
+                        </div>
+
+                        <div class="absolute right-5 top-5 p-3 bg-white rounded-full">
+                            <i class="w-4 h-4 text-gray-400" data-lucide="heart"></i>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-4 rounded-b-xl flex flex-col gap-3">
+                        <div class="flex justify-between text-[17px] font-bold">
+                            <p>MacBook Pro 13</p>
+                            <p>$1099.00</p>
+                        </div>
+                        <p>256, 8 core GPU, 8 GB</p>
+                        <div class="text-[rgb(8,172,10)] flex">
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                        </div>
+                        <div class="btn carousel-btn">Add to cart</div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="bg-[#f5f6f6] rounded-xl relative">
+
+                        <div>
+                            <img src="image/beats-solo3.png" class="w-60 mx-auto p-10">
+                        </div>
+
+                        <div class="absolute right-5 top-5 p-3 bg-white rounded-full">
+                            <i class="w-4 h-4 text-gray-400" data-lucide="heart"></i>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-4 rounded-b-xl flex flex-col gap-3">
+                        <div class="flex justify-between text-[17px] font-bold">
+                            <p>HomePod mini</p>
+                            <p>$239.00</p>
+                        </div>
+                        <p class="text-xs">5 Colors Available</p>
+                        <div class="text-[rgb(8,172,10)] flex">
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                        </div>
+                        <div class="btn carousel-btn">Add to cart</div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="bg-[#f5f6f6] rounded-xl relative">
+
+                        <div>
+                            <img src="image/Generic-700-Noise-Cancelling-Headphones.png">
+                        </div>
+
+                        <div class="absolute right-5 top-5 p-3 bg-white rounded-full">
+                            <i class="w-4 h-4 text-gray-400" data-lucide="heart"></i>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-4 rounded-b-xl flex flex-col gap-3">
+                        <div class="flex justify-between text-[17px] font-bold">
+                            <p>iPad Mini</p>
+                            <p>$539.00</p>
+                        </div>
+                        <p class="text-xs">Table with air purifier, stained veneer/black</p>
+                        <div class="text-[rgb(8,172,10)] flex">
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                        </div>
+                        <div class="btn carousel-btn">Add to cart</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section>
+        <h1 class="reveal text-2xl md:text-3xl font-bold">Weekly Popular Products</h1>
+
+        <div class="carousel">
+
+            <div class="carousel-track reveal">
+
+                <div class="carousel-card">
+                    <img src="image/headphone-min.png">
+
+                    <div class="carousel-card-detail">
+                        <div class="flex justify-between">
+                            <h3>HomePod mini</h3>
+                            <p>$239.00</p>
+                        </div>
+                        <p>Table with air purifier, stained veneer/black</p>
+                        <div class="text-[rgb(8,172,10)] flex">
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                        </div>
+                        <div class="btn carousel-btn">Add to cart</div>
+                    </div>
+
+                </div>
+
+                <div class="carousel-card">
+                    <img src="image/base-camp-duffelbag-min.png">
+
+                    <div class="carousel-card-detail">
+                        <div class="flex justify-between">
+                            <h3>HomePod mini</h3>
+                            <p>$239.00</p>
+                        </div>
+                        <p>Table with air purifier, stained veneer/black</p>
+                        <div class="text-[rgb(8,172,10)] flex">
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                        </div>
+                        <div class="btn carousel-btn">Add to cart</div>
+                    </div>
+                </div>
+
+                <div class="carousel-card">
+                    <img src="image/tomford-watch-min.png">
+
+                    <div class="carousel-card-detail">
+                        <div class="flex justify-between">
+                            <h3>HomePod mini</h3>
+                            <p>$239.00</p>
+                        </div>
+                        <p>Table with air purifier, stained veneer/black</p>
+                        <div class="text-[rgb(8,172,10)] flex">
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                        </div>
+                        <div class="btn carousel-btn">Add to cart</div>
+                    </div>
+                </div>
+                <div class="carousel-card">
+                    <img src="image/cabin-min.png">
+
+                    <div class="carousel-card-detail">
+                        <div class="flex justify-between">
+                            <h3>HomePod mini</h3>
+                            <p>$239.00</p>
+                        </div>
+                        <p>Table with air purifier, stained veneer/black</p>
+                        <div class="text-[rgb(8,172,10)] flex">
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                        </div>
+                        <div class="btn carousel-btn">Add to cart</div>
+                    </div>
+                </div>
+                <div class="carousel-card">
+                    <img src="image/pendleton-water-bottle-min.png">
+
+                    <div class="carousel-card-detail">
+                        <div class="flex justify-between">
+                            <h3>HomePod mini</h3>
+                            <p>$239.00</p>
+                        </div>
+                        <p>Table with air purifier, stained veneer/black</p>
+                        <div class="text-[rgb(8,172,10)] flex">
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                            <i class="fill-[rgb(8,172,10)] w-4 h-4" data-lucide="star"></i>
+                        </div>
+                        <div class="btn carousel-btn">Add to cart</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="flex flex-col gap-7">
+        <p class="reveal text-2xl md:text-3xl font-bold">Services To Help You Shop</p>
+        <div class="grid grid-cols-1 gap-5 md:grid-cols-3 ">
+            <div class="bg-[#f5f6f6] rounded-xl">
+
+                <div class="p-10 flex flex-col gap-5">
+                    <p class="font-bold text-2xl">Frequently Asked <br> Questions</p>
+                    <p class="text-xl">Updates on safe Shopping in <br> our Stores</p>
+                </div>
+
+                <img src="image/faq-min.png" class="rounded-b-xl" alt="">
+            </div>
+
+            <div class="bg-[#f5f6f6] rounded-xl">
+
+                <div class="p-10 flex flex-col gap-5">
+                    <p class="font-bold text-2xl">Online Payment <br> Process</p>
+                    <p class="text-xl">Updates on safe Shopping in <br> our Stores</p>
+                </div>
+
+                <img src="image/onlie-payment-min.png" class="rounded-b-xl" alt="">
+            </div>
+
+            <div class="bg-[#f5f6f6] rounded-xl">
+
+                <div class="p-10 flex flex-col gap-5">
+                    <p class="font-bold text-2xl">Home Delivery <br> Options</p>
+                    <p class="text-xl">Updates on safe Shopping in <br> our Stores</p>
+                </div>
+
+                <img src="image/home-delivery-min.png" class="rounded-b-xl" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!-- MOBILE FOOTER (hidden on sm and above) -->
+    <footer class="flex flex-col sm:hidden p-6 border-y border-gray-200 gap-8">
+
+        <!-- 1. Logo + Description -->
+        <div class="flex flex-col gap-4">
+            <img src="image/Shopcart-logo.jpg" class="w-40" alt="">
+            <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat
+                duis enim velit mollit.
+            </p>
+        </div>
+
+        <!-- 2. Nav Links -->
+        <div class="grid grid-cols-2 gap-8">
+            <div class="flex flex-col gap-3">
+                <p class="font-bold text-xl">Department</p>
+                <ul class="flex flex-col gap-2">
+                    <li><a href="#">Fashion</a></li>
+                    <li><a href="#">Education Product</a></li>
+                    <li><a href="#">Frozen Foods</a></li>
+                    <li><a href="#">Beverages</a></li>
+                    <li><a href="#">Organic Grocery</a></li>
+                    <li><a href="#">Office Supplies</a></li>
+                    <li><a href="#">Beauty Products</a></li>
+                    <li><a href="#">Books</a></li>
+                    <li><a href="#">Electronics & Gadgets</a></li>
+                    <li><a href="#">Travel Accessories</a></li>
+                    <li><a href="#">Fitness</a></li>
+                    <li><a href="#">Sneakers</a></li>
+                    <li><a href="#">Toys</a></li>
+                    <li><a href="#">Furniture</a></li>
+                </ul>
+            </div>
+
+            <div class="flex flex-col gap-3">
+                <p class="font-bold text-xl">About Us</p>
+                <ul class="flex flex-col gap-2">
+                    <li><a href="#">About Shopcart</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">News & Blog</a></li>
+                    <li><a href="#">Help</a></li>
+                    <li><a href="#">Press Center</a></li>
+                    <li><a href="#">Shop By Location</a></li>
+                    <li><a href="#">Shopcart Brands</a></li>
+                    <li><a href="#">Affiliate & Partners</a></li>
+                    <li><a href="#">Ideas & Guides</a></li>
+                </ul>
+            </div>
+
+            <div class="flex flex-col gap-3">
+                <p class="font-bold text-xl">Services</p>
+                <ul class="flex flex-col gap-2">
+                    <li><a href="#">Gift Cards</a></li>
+                    <li><a href="#">Mobile App</a></li>
+                    <li><a href="#">Shipping & Delivery</a></li>
+                    <li><a href="#">Order Pickup</a></li>
+                    <li><a href="#">Account Signup</a></li>
+                </ul>
+            </div>
+
+            <div class="flex flex-col gap-3">
+                <p class="font-bold text-xl">Help</p>
+                <ul class="flex flex-col gap-2">
+                    <li><a href="#">Shopcart Help</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">Track Orders</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Feedback</a></li>
+                    <li><a href="#">Security & Fraud</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 3. Accepted Payments -->
+        <div class="space-y-3">
+            <p class="font-bold text-xl">Accepted Payment</p>
+            <div class="grid grid-cols-3 gap-2">
+                <div class="border border-gray-200 p-3 rounded-sm items-center justify-center"><img
+                        src="image/stripe.png" class="w-10 mx-auto" alt="">
+                </div>
+                <div class="border border-gray-200 p-3 rounded-sm items-center justify-center"><img src="image/visa.png"
+                        class="w-10 mx-auto" alt=""></div>
+                <div class="border border-gray-200 p-2 rounded-sm items-center justify-center"><img
+                        src="image/mastercard.png" class="w-9 mx-auto" alt="">
+                </div>
+                <div class="border border-gray-200 p-3 rounded-sm items-center justify-center"><img
+                        src="image/Amazon.png" class="w-10 mx-auto" alt="">
+                </div>
+                <div class="border border-gray-200 p-3 rounded-sm items-center justify-center"><img
+                        src="image/Klarna.png" class="w-10 mx-auto" alt="">
+                </div>
+                <div class="border border-gray-200 p-1 px-6 rounded-sm items-center justify-center"><img
+                        src="image/PayPal.png" class="w-5 mx-auto" alt="">
+                </div>
+                <div class="border border-gray-200 p-2 rounded-sm items-center justify-center"><img
+                        src="image/ApplePay.png" class="w-10 mx-auto" alt="">
+                </div>
+                <div class="border border-gray-200 p-2 rounded-sm items-center justify-center"><img
+                        src="image/GooglePay.png" class="w-10 mx-auto" alt="">
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+
+    <!-- DESKTOP FOOTER (hidden below sm) -->
+    <footer class="hidden sm:flex justify-between p-10 mt-10 mx-10 border-y border-gray-200">
+
+        <div class="flex flex-col gap-5 w-[40%]">
+            <div>
+                <img src="image/Shopcart-logo.jpg" class="w-50" alt="">
+            </div>
+            <p>Amet minim mollit non deserunt ullamco est sit aliqua <br> dolor do amet sint. Velit officia consequat
+                duis enim velit <br> mollit.
+            </p>
+            <p class="font-bold text-xl">Accepted Payment</p>
+            <div class="flex flex-col gap-2">
+                <div class="flex gap-2 items-center">
+                    <div class="border border-gray-200 p-3 rounded-sm"><img src="image/stripe.png" class="w-10" alt="">
+                    </div>
+                    <div class="border border-gray-200 p-3 rounded-sm"><img src="image/visa.png" class="w-10" alt="">
+                    </div>
+                    <div class="border border-gray-200 p-2 rounded-sm"><img src="image/mastercard.png" class="w-9"
+                            alt=""></div>
+                    <div class="border border-gray-200 p-3 rounded-sm"><img src="image/Amazon.png" class="w-10" alt="">
+                    </div>
+                </div>
+                <div class="flex gap-3 items-center">
+                    <div class="border border-gray-200 p-3 rounded-sm"><img src="image/Klarna.png" class="w-10" alt="">
+                    </div>
+                    <div class="border border-gray-200 p-1 px-6 rounded-sm"><img src="image/PayPal.png" class="w-5"
+                            alt=""></div>
+                    <div class="border border-gray-200 p-2 rounded-sm"><img src="image/ApplePay.png" class="w-10"
+                            alt=""></div>
+                    <div class="border border-gray-200 p-2 rounded-sm"><img src="image/GooglePay.png" class="w-10"
+                            alt=""></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex gap-10 w-[60%]">
+            <div class="flex flex-col gap-5">
+                <p class="font-bold text-xl">Department</p>
+                <ul class="flex flex-col gap-2">
+                    <li><a href="#">Fashion</a></li>
+                    <li><a href="#">Education Product</a></li>
+                    <li><a href="#">Frozen Foods</a></li>
+                    <li><a href="#">Beverages</a></li>
+                    <li><a href="#">Organic Grocery</a></li>
+                    <li><a href="#">Office Supplies</a></li>
+                    <li><a href="#">Beauty Products</a></li>
+                    <li><a href="#">Books</a></li>
+                    <li><a href="#">Electronics & Gadgets</a></li>
+                    <li><a href="#">Travel Accessories</a></li>
+                    <li><a href="#">Fitness</a></li>
+                    <li><a href="#">Sneakers</a></li>
+                    <li><a href="#">Toys</a></li>
+                    <li><a href="#">Furniture</a></li>
+                </ul>
+            </div>
+            <div class="flex flex-col gap-5">
+                <p class="font-bold text-xl">About Us</p>
+                <ul class="flex flex-col gap-2">
+                    <li><a href="#">About Shopcart</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">News & Blog</a></li>
+                    <li><a href="#">Help</a></li>
+                    <li><a href="#">Press Center</a></li>
+                    <li><a href="#">Shop By Location</a></li>
+                    <li><a href="#">Shopcart Brands</a></li>
+                    <li><a href="#">Affiliate & Partners</a></li>
+                    <li><a href="#">Ideas & Guides</a></li>
+                </ul>
+            </div>
+            <div class="flex flex-col gap-5">
+                <p class="font-bold text-xl">Services</p>
+                <ul class="flex flex-col gap-2">
+                    <li><a href="#">Gift Cards</a></li>
+                    <li><a href="#">Mobile App</a></li>
+                    <li><a href="#">Shipping & Delivery</a></li>
+                    <li><a href="#">Order Pickup</a></li>
+                    <li><a href="#">Account Signup</a></li>
+                </ul>
+            </div>
+            <div class="flex flex-col gap-5">
+                <p class="font-bold text-xl">Help</p>
+                <ul class="flex flex-col gap-2">
+                    <li><a href="#">Shopcart Help</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">Track Orders</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Feedback</a></li>
+                    <li><a href="#">Security & Fraud</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </footer>
+
+    <div class="flex flex-col p-10 px-10 gap-10 md:flex-row md:justify-between">
+
+        <div class="flex flex-col gap-2 md:flex-row md:gap-20 text-[16px]">
+            <div class="flex gap-2 items-center">
+                <i data-lucide="briefcase" class="text-[#c34482]"></i>
+                <p>Become Seller</p>
+            </div>
+            <div class="flex gap-2 items-center">
+                <i data-lucide="gift" class="text-[#c34482]"></i>
+                <p>Gift Cards</p>
+            </div>
+            <div class="flex gap-2 items-center">
+                <i data-lucide="message-circle" class="text-[#c34482]"></i>
+                <p>Help Canter</p>
+            </div>
+        </div>
+
+        <div class="flex flex-col gap-2 md:flex-row md:gap-20 text-[14px]">
+            <p>Term Of Service</p>
+            <p>Privacy & Policy</p>
+            <p>All Right reserved by © 2026 Shopcart.ng</p>
+        </div>
+    </div>
+
+    <script type="module" src="./js/index.js"></script>
+    <script>lucide.createIcons();</script>
+
+</body>
+
+</html>
