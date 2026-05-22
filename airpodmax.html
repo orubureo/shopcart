@@ -43,7 +43,7 @@
     </div>
     <header>
         <div class="header flex items-center">
-            <div class="flex items-center gap-2 ">
+            <div class="flex items-center gap-2">
                 <i data-lucide="phone" class="w-4"></i>
                 <p>+001234567890</p>
             </div>
@@ -53,118 +53,243 @@
             <div class="flex align-center gap-10">
                 <div class="cus-dropdown">
                     <button class="cus-dropdown-btn" style="color: white; font-size: small;">
-                        Eng
-                        <i class="cus-dropdown-icon" data-lucide="chevron-down"></i>
+                        Eng <i class="cus-dropdown-icon" data-lucide="chevron-down"></i>
                     </button>
-
                     <div class="cus-dropdown-menu">
-                        <a href="#">Bangla</a>
-                        <a href="#">Arabic</a>
-                        <a href="#">Urdu</a>
+                        <a href="">Bangla</a>
+                        <a href="">Arabic</a>
+                        <a href="">Urdu</a>
                     </div>
                 </div>
 
                 <div class="cus-dropdown">
                     <button class="cus-dropdown-btn" style="color: white; font-size: small;">
-                        Location
-                        <i class="cus-dropdown-icon" data-lucide="chevron-down"></i>
+                        Location <i class="cus-dropdown-icon" data-lucide="chevron-down"></i>
+                    </button>
+                    <div class="cus-dropdown-menu">
+                        <a href="">Dhaka</a>
+                        <a href="">USA</a>
+                        <a href="">India</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Navbar -->
+        <div class="cus-navbar flex-col gap-2 md:flex-row">
+
+            <!-- Row 1: Logo + Icons (mobile) / Logo + Nav + Search + Icons (desktop) -->
+            <div class="flex items-center justify-between w-full">
+                <a href="index.html">
+                    <img src="image/Shopcart-logo.jpg" alt="" class="logo">
+                </a>
+
+                <!-- Mobile: search icon + hamburger -->
+                <div class="flex items-center gap-2 md:hidden">
+
+                    <!-- Mobile search toggle button -->
+                    <button id="mobile-search-toggle" class="btn btn-ghost btn-circle">
+                        <i data-lucide="search" class="w-5 h-5"></i>
                     </button>
 
-                    <div class="cus-dropdown-menu">
-                        <a href="#">Dhaka</a>
-                        <a href="#">USA</a>
-                        <a href="#">India</a>
+                    <!-- Hamburger -->
+                    <div class="dropdown dropdown-end">
+                        <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h16M4 18h7" />
+                            </svg>
+                        </div>
+
+                        <ul tabindex="-1"
+                            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-56 p-2 shadow right-0">
+                            <li>
+                                <details>
+                                    <summary class="font-medium">Category</summary>
+                                    <ul class="bg-gray-50 rounded-lg mt-1 p-1">
+                                        <li><a href="" class="flex items-center gap-2">
+                                                <i data-lucide="smartphone" class="w-4 h-4"></i> Electronics</a></li>
+                                        <li><a href="" class="flex items-center gap-2">
+                                                <i data-lucide="shirt" class="w-4 h-4"></i> Clothing</a></li>
+                                        <li><a href="" class="flex items-center gap-2">
+                                                <i data-lucide="shopping-bag" class="w-4 h-4"></i> Accessories</a></li>
+                                    </ul>
+                                </details>
+                            </li>
+                            <li><a href="">Deals</a></li>
+                            <li><a href="">What's New</a></li>
+                            <li><a href="">Delivery</a></li>
+                            <li class="border-t border-gray-100 mt-1 pt-1">
+                                <a href="" class="flex items-center gap-2">
+                                    <i data-lucide="user" class="w-4 h-4"></i> Account</a>
+                            </li>
+                            <li>
+                                <a href="" class="flex items-center gap-2">
+                                    <i data-lucide="shopping-cart" class="w-4 h-4"></i> Cart</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-            </div>
-        </div>
 
-        <div class="cus-navbar">
-            <img src="image/Shopcart-logo.jpg" alt="" class="logo">
-
-            <div class="navbar-end md:hidden">
-                <div class="dropdown">
-                    <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 6h16M4 12h16M4 18h7" />
-                        </svg>
-                    </div>
-
-                    <ul tabindex="-1"
-                        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-52 p-2 shadow">
-
-                        <!-- Category dropdown -->
-                        <li>
-                            <div class="cus-dropdown w-full">
-                                <button class="cus-dropdown-btn w-full flex justify-between">
-                                    Category
-                                    <i class="cus-dropdown-icon" data-lucide="chevron-down"></i>
-                                </button>
-                                <div class="cus-dropdown-menu static shadow-none border-0 ps-4">
-                                    <a href="#"><i data-lucide="smartphone"></i> Electronics</a>
-                                    <a href="#"><i data-lucide="shirt"></i> Clothing</a>
-                                    <a href="#"><i data-lucide="shopping-bag"></i> Accessories</a>
-                                </div>
+                <!-- Desktop nav -->
+                <div class="hidden md:flex items-center justify-between gap-10 w-full ms-10">
+                    <div class="flex items-center gap-10">
+                        <div class="cus-dropdown">
+                            <button class="cus-dropdown-btn">
+                                Category <i class="cus-dropdown-icon" data-lucide="chevron-down"></i>
+                            </button>
+                            <div class="cus-dropdown-menu">
+                                <a href=""><i data-lucide="smartphone"></i> Electronics</a>
+                                <a href=""><i data-lucide="shirt"></i> Clothing</a>
+                                <a href=""><i data-lucide="shopping-bag"></i> Accessories</a>
                             </div>
-                        </li>
+                        </div>
+                        <a href="" class="text-black no-underline">Deals</a>
+                        <a href="" class="text-black no-underline">What's New</a>
+                        <a href="" class="text-black no-underline">Delivery</a>
+                    </div>
 
-                        <li><a href="#">Deals</a></li>
-                        <li><a href="#">What's New</a></li>
-                        <li><a href="#">Delivery</a></li>
+                    <!-- Desktop Search -->
+                    <div class="relative" id="search-wrapper">
+                        <div class="join border-1 rounded-full">
+                            <input id="search-input"
+                                class="input input-ghost focus:outline-none join-item rounded-l-full"
+                                placeholder="Search Product" autocomplete="off" />
+                            <button class="btn btn-ghost join-item rounded-r-full">
+                                <i data-lucide="search"></i>
+                            </button>
+                        </div>
 
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Desktop nav (hidden on mobile) -->
-            <div class="hidden md:flex items-center justify-between gap-10 w-full">
-                <div class="flex items-center gap-10">
-                    <div class="cus-dropdown">
-                        <button class="cus-dropdown-btn">
-                            Category
-                            <i class="cus-dropdown-icon" data-lucide="chevron-down"></i>
-                        </button>
-                        <div class="cus-dropdown-menu">
-                            <a href="#"><i data-lucide="smartphone"></i> Electronics</a>
-                            <a href="#"><i data-lucide="shirt"></i> Clothing</a>
-                            <a href="#"><i data-lucide="shopping-bag"></i> Accessories</a>
+                        <!-- Search Dropdown -->
+                        <div id="search-dropdown"
+                            class="hidden absolute top-12 left-0 w-[420px] bg-white border border-gray-200 rounded-2xl shadow-lg p-5 z-50">
+                            <p class="font-semibold text-sm mb-4">Popular Categories</p>
+                            <div class="grid grid-cols-2 gap-3">
+                                <a href=""
+                                    class="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-50 border border-gray-100">
+                                    <img src="image/furniture.png" class="w-10 h-10 object-contain" alt="Furniture">
+                                    <div>
+                                        <p class="font-semibold text-sm">Furniture</p>
+                                        <p class="text-xs text-gray-400">240 Item Available</p>
+                                    </div>
+                                </a>
+                                <a href="headphone.html"
+                                    class="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-50 border border-gray-100">
+                                    <img src="image/airpodmax-blue.png" class="w-10 h-10 object-contain"
+                                        alt="Headphone">
+                                    <div>
+                                        <p class="font-semibold text-sm">Headphone</p>
+                                        <p class="text-xs text-gray-400">240 Item Available</p>
+                                    </div>
+                                </a>
+                                <a href=""
+                                    class="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-50 border border-gray-100">
+                                    <img src="image/victoria_coral-multicolor_1.png" class="w-10 h-10 object-contain"
+                                        alt="Shoe">
+                                    <div>
+                                        <p class="font-semibold text-sm">Shoe</p>
+                                        <p class="text-xs text-gray-400">240 Item Available</p>
+                                    </div>
+                                </a>
+                                <a href=""
+                                    class="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-50 border border-gray-100">
+                                    <img src="image/DALIX-Signature-Travel-or-Gym-Duffle-Bag-in-Pink.png"
+                                        class="w-10 h-10 object-contain" alt="Bag">
+                                    <div>
+                                        <p class="font-semibold text-sm">Bag</p>
+                                        <p class="text-xs text-gray-400">240 Item Available</p>
+                                    </div>
+                                </a>
+                                <a href=""
+                                    class="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-50 border border-gray-100">
+                                    <img src="image/macbook-13-min.png" class="w-10 h-10 object-contain" alt="Laptop">
+                                    <div>
+                                        <p class="font-semibold text-sm">Laptop</p>
+                                        <p class="text-xs text-gray-400">240 Item Available</p>
+                                    </div>
+                                </a>
+                                <a href=""
+                                    class="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-50 border border-gray-100">
+                                    <img src="image/Carrie+Soto.webp" class="w-10 h-10 object-contain" alt="Book">
+                                    <div>
+                                        <p class="font-semibold text-sm">Book</p>
+                                        <p class="text-xs text-gray-400">240 Item Available</p>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <a href="#" class="text-black no-underline">Deals</a>
-                    <a href="#" class="text-black no-underline">What's New</a>
-                    <a href="#" class="text-black no-underline">Delivery</a>
-                </div>
 
-
-                <!-- <form class="flex align-center">
-                    <input type="search" name="" id="" class="p-1 border-1px solid rgb(124, 120, 120) rounded-lg"
-                        placeholder="Search Product">
-
-                    <button type="submit"><i data-lucide="search"></i></button>
-                </form> -->
-
-                <div class="join border-1 rounded-full">
-                    <input class="input input-ghost focus:outline-none join-item rounded-l-full"
-                        placeholder="Search Product" />
-                    <button class="btn btn-ghost join-item rounded-r-full"><i data-lucide="search"></i></button>
-                </div>
-
-                <div class="flex items-center">
-                    <i data-lucide="user" class=""></i>
-                    <a href="#" class="">Account</a>
-                </div>
-
-                <div class="flex items-center">
-                    <i data-lucide="shopping-cart" class=""></i>
-                    <a href="#" class="">Cart</a>
+                    <div class="flex items-center gap-5">
+                        <div class="flex items-center gap-1">
+                            <i data-lucide="user"></i>
+                            <a href="">Account</a>
+                        </div>
+                        <div class="flex items-center gap-1">
+                            <i data-lucide="shopping-cart"></i>
+                            <a href="">Cart</a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
+            <!-- Mobile Search Bar (hidden by default, toggled by search icon) -->
+            <div id="mobile-search-bar" class="hidden w-full md:hidden pb-2">
+                <div class="relative" id="mobile-search-wrapper">
+                    <div class="join border border-gray-200 rounded-full w-full">
+                        <input id="mobile-search-input"
+                            class="input input-ghost focus:outline-none join-item rounded-l-full w-full"
+                            placeholder="Search Product" autocomplete="off" />
+                        <button class="btn btn-ghost join-item rounded-r-full">
+                            <i data-lucide="search"></i>
+                        </button>
+                    </div>
+
+                    <!-- Mobile Search Dropdown -->
+                    <div id="mobile-search-dropdown"
+                        class="hidden absolute top-12 left-0 right-0 bg-white border border-gray-200 rounded-2xl shadow-lg p-4 z-50">
+                        <p class="font-semibold text-sm mb-3">Popular Categories</p>
+                        <div class="grid grid-cols-2 gap-2">
+                            <a href=""
+                                class="flex items-center gap-2 p-2 rounded-xl hover:bg-gray-50 border border-gray-100">
+                                <img src="image/furniture.png" class="w-8 h-8 object-contain" alt="Furniture">
+                                <div>
+                                    <p class="font-semibold text-xs">Furniture</p>
+                                    <p class="text-xs text-gray-400">240 Items</p>
+                                </div>
+                            </a>
+                            <a href="headphone.html"
+                                class="flex items-center gap-2 p-2 rounded-xl hover:bg-gray-50 border border-gray-100">
+                                <img src="image/airpodmax-blue.png" class="w-8 h-8 object-contain" alt="Headphone">
+                                <div>
+                                    <p class="font-semibold text-xs">Headphone</p>
+                                    <p class="text-xs text-gray-400">240 Items</p>
+                                </div>
+                            </a>
+                            <a href=""
+                                class="flex items-center gap-2 p-2 rounded-xl hover:bg-gray-50 border border-gray-100">
+                                <img src="image/victoria_coral-multicolor_1.png" class="w-8 h-8 object-contain"
+                                    alt="Shoe">
+                                <div>
+                                    <p class="font-semibold text-xs">Shoe</p>
+                                    <p class="text-xs text-gray-400">240 Items</p>
+                                </div>
+                            </a>
+                            <a href=""
+                                class="flex items-center gap-2 p-2 rounded-xl hover:bg-gray-50 border border-gray-100">
+                                <img src="image/macbook-13-min.png" class="w-8 h-8 object-contain" alt="Laptop">
+                                <div>
+                                    <p class="font-semibold text-xs">Laptop</p>
+                                    <p class="text-xs text-gray-400">240 Items</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </div>
-
     </header>
 
     <!-- Product Section -->
@@ -258,7 +383,7 @@
                             <i data-lucide="truck" class="w-5 h-5 text-orange-500 mt-0.5 shrink-0"></i>
                             <div>
                                 <p class="font-semibold text-gray-800 text-sm">Free Delivery</p>
-                                <a href="#" class="text-xs text-gray-500 underline hover:text-gray-700">Enter your
+                                <a href="" class="text-xs text-gray-500 underline hover:text-gray-700">Enter your
                                     Postal code for Delivery Availability</a>
                             </div>
                         </div>
@@ -266,7 +391,7 @@
                             <i data-lucide="calendar" class="w-5 h-5 text-orange-500 mt-0.5 shrink-0"></i>
                             <div>
                                 <p class="font-semibold text-gray-800 text-sm">Return Delivery</p>
-                                <a href="#" class="text-xs text-gray-500 hover:text-gray-700">Free 30days Delivery
+                                <a href="" class="text-xs text-gray-500 hover:text-gray-700">Free 30days Delivery
                                     Returns. <span class="underline">Details</span></a>
                             </div>
                         </div>
@@ -409,58 +534,58 @@
             <div class="flex flex-col gap-3">
                 <p class="font-bold text-xl">Department</p>
                 <ul class="flex flex-col gap-2">
-                    <li><a href="#">Fashion</a></li>
-                    <li><a href="#">Education Product</a></li>
-                    <li><a href="#">Frozen Foods</a></li>
-                    <li><a href="#">Beverages</a></li>
-                    <li><a href="#">Organic Grocery</a></li>
-                    <li><a href="#">Office Supplies</a></li>
-                    <li><a href="#">Beauty Products</a></li>
-                    <li><a href="#">Books</a></li>
-                    <li><a href="#">Electronics & Gadgets</a></li>
-                    <li><a href="#">Travel Accessories</a></li>
-                    <li><a href="#">Fitness</a></li>
-                    <li><a href="#">Sneakers</a></li>
-                    <li><a href="#">Toys</a></li>
-                    <li><a href="#">Furniture</a></li>
+                    <li><a href="">Fashion</a></li>
+                    <li><a href="">Education Product</a></li>
+                    <li><a href="">Frozen Foods</a></li>
+                    <li><a href="">Beverages</a></li>
+                    <li><a href="">Organic Grocery</a></li>
+                    <li><a href="">Office Supplies</a></li>
+                    <li><a href="">Beauty Products</a></li>
+                    <li><a href="">Books</a></li>
+                    <li><a href="">Electronics & Gadgets</a></li>
+                    <li><a href="">Travel Accessories</a></li>
+                    <li><a href="">Fitness</a></li>
+                    <li><a href="">Sneakers</a></li>
+                    <li><a href="">Toys</a></li>
+                    <li><a href="">Furniture</a></li>
                 </ul>
             </div>
 
             <div class="flex flex-col gap-3">
                 <p class="font-bold text-xl">About Us</p>
                 <ul class="flex flex-col gap-2">
-                    <li><a href="#">About Shopcart</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="#">News & Blog</a></li>
-                    <li><a href="#">Help</a></li>
-                    <li><a href="#">Press Center</a></li>
-                    <li><a href="#">Shop By Location</a></li>
-                    <li><a href="#">Shopcart Brands</a></li>
-                    <li><a href="#">Affiliate & Partners</a></li>
-                    <li><a href="#">Ideas & Guides</a></li>
+                    <li><a href="">About Shopcart</a></li>
+                    <li><a href="">Careers</a></li>
+                    <li><a href="">News & Blog</a></li>
+                    <li><a href="">Help</a></li>
+                    <li><a href="">Press Center</a></li>
+                    <li><a href="">Shop By Location</a></li>
+                    <li><a href="">Shopcart Brands</a></li>
+                    <li><a href="">Affiliate & Partners</a></li>
+                    <li><a href="">Ideas & Guides</a></li>
                 </ul>
             </div>
 
             <div class="flex flex-col gap-3">
                 <p class="font-bold text-xl">Services</p>
                 <ul class="flex flex-col gap-2">
-                    <li><a href="#">Gift Cards</a></li>
-                    <li><a href="#">Mobile App</a></li>
-                    <li><a href="#">Shipping & Delivery</a></li>
-                    <li><a href="#">Order Pickup</a></li>
-                    <li><a href="#">Account Signup</a></li>
+                    <li><a href="">Gift Cards</a></li>
+                    <li><a href="">Mobile App</a></li>
+                    <li><a href="">Shipping & Delivery</a></li>
+                    <li><a href="">Order Pickup</a></li>
+                    <li><a href="">Account Signup</a></li>
                 </ul>
             </div>
 
             <div class="flex flex-col gap-3">
                 <p class="font-bold text-xl">Help</p>
                 <ul class="flex flex-col gap-2">
-                    <li><a href="#">Shopcart Help</a></li>
-                    <li><a href="#">Returns</a></li>
-                    <li><a href="#">Track Orders</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Feedback</a></li>
-                    <li><a href="#">Security & Fraud</a></li>
+                    <li><a href="">Shopcart Help</a></li>
+                    <li><a href="">Returns</a></li>
+                    <li><a href="">Track Orders</a></li>
+                    <li><a href="">Contact Us</a></li>
+                    <li><a href="">Feedback</a></li>
+                    <li><a href="">Security & Fraud</a></li>
                 </ul>
             </div>
         </div>
@@ -537,55 +662,55 @@
             <div class="flex flex-col gap-5">
                 <p class="font-bold text-xl">Department</p>
                 <ul class="flex flex-col gap-2">
-                    <li><a href="#">Fashion</a></li>
-                    <li><a href="#">Education Product</a></li>
-                    <li><a href="#">Frozen Foods</a></li>
-                    <li><a href="#">Beverages</a></li>
-                    <li><a href="#">Organic Grocery</a></li>
-                    <li><a href="#">Office Supplies</a></li>
-                    <li><a href="#">Beauty Products</a></li>
-                    <li><a href="#">Books</a></li>
-                    <li><a href="#">Electronics & Gadgets</a></li>
-                    <li><a href="#">Travel Accessories</a></li>
-                    <li><a href="#">Fitness</a></li>
-                    <li><a href="#">Sneakers</a></li>
-                    <li><a href="#">Toys</a></li>
-                    <li><a href="#">Furniture</a></li>
+                    <li><a href="">Fashion</a></li>
+                    <li><a href="">Education Product</a></li>
+                    <li><a href="">Frozen Foods</a></li>
+                    <li><a href="">Beverages</a></li>
+                    <li><a href="">Organic Grocery</a></li>
+                    <li><a href="">Office Supplies</a></li>
+                    <li><a href="">Beauty Products</a></li>
+                    <li><a href="">Books</a></li>
+                    <li><a href="">Electronics & Gadgets</a></li>
+                    <li><a href="">Travel Accessories</a></li>
+                    <li><a href="">Fitness</a></li>
+                    <li><a href="">Sneakers</a></li>
+                    <li><a href="">Toys</a></li>
+                    <li><a href="">Furniture</a></li>
                 </ul>
             </div>
             <div class="flex flex-col gap-5">
                 <p class="font-bold text-xl">About Us</p>
                 <ul class="flex flex-col gap-2">
-                    <li><a href="#">About Shopcart</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="#">News & Blog</a></li>
-                    <li><a href="#">Help</a></li>
-                    <li><a href="#">Press Center</a></li>
-                    <li><a href="#">Shop By Location</a></li>
-                    <li><a href="#">Shopcart Brands</a></li>
-                    <li><a href="#">Affiliate & Partners</a></li>
-                    <li><a href="#">Ideas & Guides</a></li>
+                    <li><a href="">About Shopcart</a></li>
+                    <li><a href="">Careers</a></li>
+                    <li><a href="">News & Blog</a></li>
+                    <li><a href="">Help</a></li>
+                    <li><a href="">Press Center</a></li>
+                    <li><a href="">Shop By Location</a></li>
+                    <li><a href="">Shopcart Brands</a></li>
+                    <li><a href="">Affiliate & Partners</a></li>
+                    <li><a href="">Ideas & Guides</a></li>
                 </ul>
             </div>
             <div class="flex flex-col gap-5">
                 <p class="font-bold text-xl">Services</p>
                 <ul class="flex flex-col gap-2">
-                    <li><a href="#">Gift Cards</a></li>
-                    <li><a href="#">Mobile App</a></li>
-                    <li><a href="#">Shipping & Delivery</a></li>
-                    <li><a href="#">Order Pickup</a></li>
-                    <li><a href="#">Account Signup</a></li>
+                    <li><a href="">Gift Cards</a></li>
+                    <li><a href="">Mobile App</a></li>
+                    <li><a href="">Shipping & Delivery</a></li>
+                    <li><a href="">Order Pickup</a></li>
+                    <li><a href="">Account Signup</a></li>
                 </ul>
             </div>
             <div class="flex flex-col gap-5">
                 <p class="font-bold text-xl">Help</p>
                 <ul class="flex flex-col gap-2">
-                    <li><a href="#">Shopcart Help</a></li>
-                    <li><a href="#">Returns</a></li>
-                    <li><a href="#">Track Orders</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Feedback</a></li>
-                    <li><a href="#">Security & Fraud</a></li>
+                    <li><a href="">Shopcart Help</a></li>
+                    <li><a href="">Returns</a></li>
+                    <li><a href="">Track Orders</a></li>
+                    <li><a href="">Contact Us</a></li>
+                    <li><a href="">Feedback</a></li>
+                    <li><a href="">Security & Fraud</a></li>
                 </ul>
             </div>
         </div>
@@ -616,8 +741,60 @@
         </div>
     </div>
 
-    <script type="module" src="./js/index.js"></script>
-    <script>lucide.createIcons();</script>
+    <!-- Back to Top Button -->
+    <button id="back-to-top"
+        class="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full bg-[#1a3c2e] text-white shadow-lg flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300">
+        <i data-lucide="arrow-up" class="w-5 h-5"></i>
+    </button>
+
+    <!-- Floating Contact FAB -->
+    <div class="fixed bottom-6 left-6 z-50 flex flex-col items-center gap-3">
+
+        <!-- Social buttons (hidden by default) -->
+        <div id="fab-buttons"
+            class="flex flex-col items-center gap-3 overflow-hidden transition-all duration-300 max-h-0 opacity-0">
+
+            <!-- Twitter / X -->
+            <a href="https://twitter.com" target="_blank"
+                class="w-11 h-11 rounded-full bg-black text-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-200"
+                aria-label="Twitter / X">
+                <svg class="w-4 h-4 fill-white" viewBox="0 0 24 24">
+                    <path
+                        d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117Z" />
+                </svg>
+            </a>
+
+            <!-- WhatsApp -->
+            <a href="https://wa.me/001234567890" target="_blank"
+                class="w-11 h-11 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-200"
+                aria-label="WhatsApp">
+                <svg class="w-5 h-5 fill-white" viewBox="0 0 24 24">
+                    <path
+                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
+                </svg>
+            </a>
+
+            <!-- Facebook -->
+            <a href="https://facebook.com" target="_blank"
+                class="w-11 h-11 rounded-full bg-[#1877F2] text-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-200"
+                aria-label="Facebook">
+                <svg class="w-5 h-5 fill-white" viewBox="0 0 24 24">
+                    <path
+                        d="M22 12a10 10 0 1 0-11.563 9.88v-6.99H7.9V12h2.537V9.797c0-2.506 1.493-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.772-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.99A10.002 10.002 0 0 0 22 12z" />
+                </svg>
+            </a>
+
+        </div>
+
+        <!-- Toggle button (always at bottom) -->
+        <button id="fab-toggle"
+            class="w-12 h-12 rounded-full bg-[#1a3c2e] text-white flex items-center justify-center shadow-lg transition-transform duration-300"
+            aria-label="Contact us">
+            <i data-lucide="message-circle" class="w-5 h-5"></i>
+        </button>
+
+        <script type="module" src="./js/index.js"></script>
+        <script>lucide.createIcons();</script>
 
 </body>
 

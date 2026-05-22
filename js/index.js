@@ -456,3 +456,65 @@ if (mobileSearchInput && mobileSearchDropdown) {
     }
   });
 }
+
+/**
+ * Back to top button.
+ * Appears when the user scrolls down 300px.
+ * Smoothly scrolls back to the top when clicked.
+ */
+const backToTopBtn = document.getElementById('back-to-top');
+
+if (backToTopBtn) {
+
+  // Show or hide button based on scroll position
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      backToTopBtn.style.opacity = '1';
+      backToTopBtn.style.pointerEvents = 'auto';
+    } else {
+      backToTopBtn.style.opacity = '0';
+      backToTopBtn.style.pointerEvents = 'none';
+    }
+  });
+
+  // Scroll to top on click
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
+/**
+ * Floating contact FAB.
+ * Toggles social media buttons open/closed on click.
+ * Rotates the icon when open.
+ */
+const fabToggle = document.getElementById('fab-toggle');
+const fabButtons = document.getElementById('fab-buttons');
+
+if (fabToggle && fabButtons) {
+  let fabOpen = false;
+
+  fabToggle.addEventListener('click', () => {
+    fabOpen = !fabOpen;
+
+    if (fabOpen) {
+      fabButtons.style.maxHeight = '200px';
+      fabButtons.style.opacity = '1';
+      fabToggle.style.transform = 'rotate(45deg)';
+    } else {
+      fabButtons.style.maxHeight = '0';
+      fabButtons.style.opacity = '0';
+      fabToggle.style.transform = 'rotate(0deg)';
+    }
+  });
+
+  // Close FAB when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!fabToggle.contains(e.target) && !fabButtons.contains(e.target)) {
+      fabOpen = false;
+      fabButtons.style.maxHeight = '0';
+      fabButtons.style.opacity = '0';
+      fabToggle.style.transform = 'rotate(0deg)';
+    }
+  });
+}
